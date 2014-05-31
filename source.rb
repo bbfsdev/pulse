@@ -14,6 +14,6 @@ class Source
   end
 
   def projects()
-    @trello_source.boards
+    @trello_source.boards_status
   end
 end

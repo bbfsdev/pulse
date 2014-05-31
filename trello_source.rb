@@ -23,6 +23,14 @@ class TrelloSource
     status
   end
 
+  def boards_status()
+    status = Array.new
+    @boards.each do |name, id|
+      status.push(status_list(name))
+    end
+    status
+  end
+
   def members(board_name)
     Board.find(@boards[board_name]).members(params={limit: 1000})
   end
