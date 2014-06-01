@@ -13,10 +13,10 @@ class Pulse < Sinatra::Base
     @members = @source.members.to_json
 
     SCHEDULER.every '10s', :first_in => 0 do |job|
-      @projects = @source.projects
+      @projects = @source.projects.to_json
     end
     SCHEDULER.every '10s', :first_in => 0 do |job|
-      @members = @source.members
+      @members = @source.members.to_json
     end
   end
 
