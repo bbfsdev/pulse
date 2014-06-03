@@ -1,0 +1,39 @@
+<!-- Tables -->
+<div ng-controller="ContentController">
+	  <div class="row collapse">
+		  <div class="small-6 columns">
+		         <div class="small-12 columns">
+			     <searchable-content design="panel clearfix" type="div" title="Members (Activity)" model="members">
+				<span class="left">{{data.user}}</span>
+				<span class="label round right">{{data.activity}}</span>
+                             </searchable-content>
+                         </div> 
+		  </div>
+                  <div class="small-6 columns" >
+                        <div class="small-12 columns panel radius callout ">
+			     <searchable-content type="ul" title="We want to help!" model="wantHelp">
+				{{data.user }} with {{data.skill}} ({{ data.time}})
+			     </searchable-content>
+                        </div>
+		  </div>
+		  
+	  </div>
+	 <br><br><br>
+          <div class="row collapse">
+		  <div class="small-6 columns panel radius callout">
+  			<div class="small-12 columns">
+			     <searchable-content type="ul" title="Help Needed" model="helpNeeded">
+				{{data.text }} ({{ data.user}})
+			     </searchable-content>
+                         </div> 
+		  </div>
+		  <div class="small-6 columns">
+	          	<div class="small-12 columns">
+      		             <searchable-content design="panel" type="div" title="Projects" model="projects">
+				{{data}}
+                             </searchable-content>
+                        </div>
+		  </div>
+	  </div>
+</div>
+
