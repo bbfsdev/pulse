@@ -24,9 +24,9 @@ class TrelloSource
   end
 
   def boards_status()
-    status = Array.new
+    status = {}
     @boards.each do |name, id|
-      status.push(status_list(name))
+      status[name] = status_list(name)
     end
     status
   end
