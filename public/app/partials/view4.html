@@ -1,0 +1,47 @@
+<!-- Tables -->
+
+<div ng-controller="ContentController">
+     <div class="row wide">
+		  <div class="small-6 columns">
+		  
+        <div class="small-12 columns panel radius callout ">
+			     <searchable-content type="ul" title="We want to help!" model="wantHelp">
+				{{data.user }} with {{data.skill}} ({{ data.time}})
+			     </searchable-content>
+                     
+		  </div>
+		  </div>
+		  <div class="small-6 columns">
+			   <div class="small-12 columns panel radius callout">		  
+		  
+			     <searchable-content type="ul" title="Help Needed" model="helpNeeded">
+				{{data.text }} ({{ data.user}})
+			     </searchable-content>
+            </div>
+		  </div>
+		  
+	  </div>
+	  <div class="row wide">
+	     
+		  <div class="small-7 columns">
+		        
+			     <searchable-content design="panel clearfix" type="ul-2-column" title="Members (Activity)" model="members">
+				<span class="left">{{data.label}}</span>
+				<span class="label round right">{{data.value}}</span>
+                             </searchable-content>
+                          
+		  </div>
+		  <div class="small-5 columns">
+	          	
+      		             <searchable-content design="panel" type="div" title="Projects" model="projects">
+				<h2>{{data.project}}</h2>
+				<div ng-repeat="board in data.boards">
+					{{board.label}} : {{board.value}}				
+				</div>
+                             </searchable-content>
+                       
+		  </div>
+	 </div>
+	 
+</div>
+

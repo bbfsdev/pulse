@@ -29,3 +29,31 @@
   padding: 0;
 }
 
+.wide {
+  max-width: 92.5rem;
+}
+
+ul.two-column{
+  overflow:hidden;
+  width: auto;
+  list-style: none;
+  padding:0; margin:0;
+}
+
+ul.two-column > li{
+  float:left;
+  display:inline;
+}
+
+ul.two-column > li:nth-child(2n) {
+	margin-left: 2%;
+}
+
+#double li  { width:49%;} 
+
+.panel {
+   padding: 0.25rem;
+   margin-bottom: 0.25rem;
+}
+
+

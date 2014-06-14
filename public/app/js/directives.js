@@ -27,7 +27,11 @@ angular.module('pulse.directives', []).
                      temp += '<ul>' +
 				'<li ng-repeat="data in ' + modelType +' | filter:'+modelType+'.query">'+ tElem.html() + '</li>' +
 		             '</ul>';
-                 } else {
+		      } else if (tAttrs['type']=='ul-2-column') {
+		      	  temp += '<ul id="double" class="two-column">' +
+				'<li class="{{design}}" ng-repeat="data in ' + modelType +' | filter:'+modelType+'.query">'+ tElem.html() + '</li>' +
+		             '</ul>';
+            } else if (tAttrs['type']=='div') {
                      temp += '<div class="{{design}}" ng-repeat="data in '+modelType+' | filter:'+modelType+'.query">' +
 				   '<p>' + tElem.html() +'</p>' +
 			      '</div>';
