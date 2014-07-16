@@ -79,7 +79,6 @@ angular.module('pulse.directives', []).
             design : '@',
 				mode : '@'
           },
-	  replace : false,
 	  controller : "ProjectGraphController",
      template: function(tElem, tAttrs){         
 		 return '<div class="{{design}}"><linechart data="eventGraphData" options="graphOptions" mode="{{mode}}"></linechart></div>'; 
@@ -92,4 +91,21 @@ angular.module('pulse.directives', []).
           }
 
     }; 
-  }]);
+  }])
+  .directive('icon', [ function() {
+    return {
+          restrict: 'E',
+           scope: {
+            of : '@'
+          },
+	  replace : true,
+     template: function(tElem, tAttrs){         
+		 return '<img ng-src="{{ temp | toIconUrl }}" class="icon"/>'; 
+          },
+
+          link : function(scope, element, attrs) {	       	  
+	       	  scope.temp = scope.of;
+          }
+
+    };
+ }]); 

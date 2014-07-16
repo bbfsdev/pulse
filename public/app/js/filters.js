@@ -39,4 +39,12 @@ angular.module('pulse.filters', []).
     		
       return output;
     };
+  }])
+  .filter('toIconUrl', ['IconService',function(IconService) {
+    return function(input) {
+		if (input == undefined)
+    		return input;    	
+  		
+  		return IconService.getIcon(input);
+  	   };
   }]);

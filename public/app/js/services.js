@@ -85,4 +85,27 @@ angular.module('pulse.services', [])
 			return deferred.promise;
 		};
 				
+}])
+.service('IconService', [ function () { 
+
+		this.iconFolder = 'img/icons/';
+		this.icons = { 
+							'members' : 'members_icon.png',
+							'lines_of_code' : 'code_lines_icon.png',
+							'ruby' : 'ruby_icon.png',
+							'cpp' : 'cpp_icon.gif',
+							'c++' : 'cpp_icon.gif',
+							'css' : 'css_icon.png',
+							'java' : 'java_icon.gif',
+							'xml' : 'xml_icon.gif',
+							'python' : 'python_icon.png'
+
+						 };
+		
+		this.getIcon = function (from, width, height) {
+			 if (width === undefined && height === undefined) {
+			 	return  this.iconFolder + this.icons[from.toLowerCase()];
+			 }
+		}
+		
 }]);

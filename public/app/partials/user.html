@@ -12,26 +12,28 @@
 		        	</div>
 		        	<div class="row  collapse">
 
-		        				<div class="small-6 medium-6 columns">
-		        					<div class="panel radius callout">
-										<b>Activity:</b> <span class="label round right">{{userData.info.activity}}</span>		        			
-		        					</div>
-		        					<div class="panel radius" >
-										<b>Trello user:</b> <a class="right" href="{{userData.info.link_to_trello_page}}">{{userData.info.trello_username}}</a>		        			
-		        					</div>
-		        					<div class="panel radius">
-										<b>Github user:</b> <a class="right" href="{{userData.info.link_to_github_page}}">{{userData.info.github_username}}</a>		        			
-		        					</div>
-		        					<div class="panel radius">
-									   <b>Number of projects:</b> <span class="right">{{userData.info.number_of_projects}}</span>							
-									</div>
-									<div class="panel radius">
-										<b>Lines of code:</b> <span class="right">{{userData.info.lines_of_code}}</span>		        			
+		        				<div class="small-12 medium-6 columns">
+		        					<div class="row">
+		        						<div class="panel radius callout">
+											<b>Activity:</b> <span class="label round right">{{userData.info.activity}}</span>		        			
+		        						</div>
+		        						<div class="panel radius" >
+											<b>Trello user:</b> <a class="right" href="{{userData.info.link_to_trello_page}}">{{userData.info.trello_username}}</a>		        			
+		        						</div>
+		        						<div class="panel radius">
+											<b>Github user:</b> <a class="right" href="{{userData.info.link_to_github_page}}">{{userData.info.github_username}}</a>		        			
+		        						</div>
+		        						<div class="panel radius">
+										   <b>Number of projects:</b> <span class="right">{{userData.info.number_of_projects}}</span>							
+										</div>
+										<div class="panel radius">
+											<b>Lines of code:</b> <span class="right">{{userData.info.lines_of_code}}</span>		        			
+		        						</div>
 		        					</div>
 		        				</div>
-		        				<div class="small-6 medium-6 columns">
+		        				<div class="small-12 medium-6 columns">
 		        					
-		        					<div>
+		        					<div class="row collapse">
 		        					
 		        						<div class="small-6 medium-6 columns">
 
@@ -56,29 +58,53 @@
 		  		  <div class="row  collapse">
 		        	   <div class="left"><h2>{{userData.info.name}} {{userData.info.family_name}}<small>'s projects</small></h2></div>
 		        		<div  class="clearfix"></div>
+					
 		        		<div ng-repeat="project in userData.projects" class="row collapse">
 		  							
-		  							<div class="small-6 medium-3 columns">
-		        			   		<h3>{{project.info.name}}</h3>
+		  							<div class="small-2 medium-4 columns">
+		  								<div class="row">
+		        			   			<a href="#project/{{project.info.id}}"><h4>{{project.info.name}}</h4></a>
+		        			   		</div>
+		        			   		
+		        			   	</div>
+		        			   	
+		        			   	<!-- can change this to a "language icons panel" directive? -->
+									<div class="small-4 medium-4 columns">		  									
+		        			   		<div class="row align-right">
+  												<div ng-repeat="language in project.info.languages | limitTo : 3" class="small-4 medium-4 columns align-right" ng-class="{1:'medium-push-8', 2:'medium-push-4'}[project.info.languages.length]">
+													<small>{{language.usage}}</small> <icon of="{{language.name}}" />		        			   				 	  		
+        			   						</div>
+        			   						<div ng-if="project.info.languages.length == 2">
+													  <div class="small-4 medium-4 columns align-right"></div>       			   						
+        			   						</div>
+		        			   		</div>
+		        			   		<div class="row align-right">
+		        			   			<div ng-if="project.info.languages.length > 3">
+        										<div ng-repeat="language in project.info.languages | limitTo : 6 | limitTo: -3" class="small-4 medium-4 columns align-right" ng-class="{1:'medium-push-8', 2:'medium-push-4'}[(project.info.languages.length - 3)]">
+													<small>{{language.usage}}</small> <icon of="{{language.name}}" />		        			   				 	  		
+		        			   				</div>
+											</div>
+		        			   		</div>
 		        			   	</div>
 		        			   	
 		        			   	<div class="small-2 medium-1 columns ">
-										 <div class="row align-right">  			   			
-		        			   			<small>{{project.info.lines_of_code}}</small> <img src="img/code_lines_icon.png" />
+										 <div class="row align-right">		   			
+		        			   			  <small>{{project.info.lines_of_code}}</small> <icon of="lines_of_code" />
 										</div>
 										 <div class="row align-right">        			   			
-		        			   			<small>{{project.info.members}}</small> <img src="img/members_icon.png" />
-		        			   		 </div>
-								   </div>
-								   <div class="small-4 columns"></div>
+		        			   			  <small>{{project.info.members}}</small> <icon of="members" />
 
-		        			   	<div class="small-12 medium-5 columns">		        			   	
-		        			   		<project-graph project-id="{{project.info.id}}" mode="thumbnail" class="left" design="project-graph-row panel callout radius"></project-graph>
+		        			   		 </div>
+								   </div>									
+									
+		        			   	<div class="small-4 medium-3 columns">		        			   	
+		        			   		 <project-graph project-id="{{project.info.id}}" mode="thumbnail" class="left" design="project-graph-row panel callout radius"></project-graph>
 		        			   	</div>
-		        			   	<div class="small-12 medium-3 columns">
-										<a href="#project/{{project.info.id}}" class="small button secondary round">Go To Project</a>
-									</div>		   		   			        			   	
-		        			   	<hr/>	   	
+		        			   	
+		        			   	
+		        			   		
+		        			   		<hr/>
+		        			   		   	
 		        		</div>
 								
 
