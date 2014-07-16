@@ -53,7 +53,39 @@ ul.two-column > li:nth-child(2n) {
 
 .panel {
    padding: 0.25rem;
-   margin-bottom: 0.25rem;
+   margin: 0.25rem;
 }
+.panel.callout {
+   padding: 0.25rem;
+   margin: 0.25rem;
+} 
+.panel h2, .panel h3, .panel h4, .panel h5, .panel h6 {
+    line-height: 1;
+    padding:0;
+    margin: 0.325rem; }
+    
+.userRow {
+	margin: auto;
+}
+
+.project-graph-row{
+
+    display: block;
+    width: 250px;
+    height: 32px;
+    padding: 0.5rem;
+    border-style: solid;
+    border-width: 1px;
+
+}
+
+.project-graph-detailed {
+    height: 200px;
+}
+
+.align-right {
+	text-align: right;
+}
+
 
 

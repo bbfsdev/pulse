@@ -1,0 +1,21 @@
+{ 
+"info": 
+{"id": "2", "name": "Genady", "family_name": "Petelko", "trello_username": "genadypetelko", "github_username": "genadyp", "lines_of_code": "87654", "languages":[{"name" : "java", "usage": "34%"}, {"name" : "ruby" , "usage": "66%"}], "number_of_projects": 1, "number_of_events": 1, "link_to_github_page": "https://github.com/bbfsdev", "link_to_trello_page": "https://trello.com/Galo4key" , "activity":"2", "picture" : "gena.png"},
+"projects": [ 
+		{"info": 
+				{"id" : "1" , "name" : "BBFS", "description": "BBFS is a content backup tool which is used for backing up media file 24/7. This tool indexes and manages hundreds of thousands of files and dozen TB of data with rapid monthly grows. It's purpose is to backup large amounts of importent data with high flow speeds." ,"lines_of_code" : "43500", "link_to_trello":"http://www.trello.com/bbfs", "languages":[{"name":"ruby", "usage":"100%"}]  , "links_to_github":[{"asdasd":"http://www.github.com/bbfsdev/bbfs"}], "members":"4"}
+		},
+		{"info": 
+				{"id" : "2" , "name" : "Round Tables", "description": "BBFS is a content backup tool which is used for backing up media file 24/7. This tool indexes and manages hundreds of thousands of files and dozen TB of data with rapid monthly grows. It's purpose is to backup large amounts of importent data with high flow speeds." ,"lines_of_code" : "43500", "link_to_trello":"http://www.trello.com/bbfs", "languages":[{"name":"ruby", "usage":"100%"}]  , "links_to_github":[{"asdasd":"http://www.github.com/bbfsdev/bbfs"}], "members":"4"}
+		}
+],
+"events": [ 
+		{"info": 
+			{"event_name":"bug fixed", "event_description":"fixed a bug that was buggy" ,"link_to_event":"https://github.com/bbfsdev/bbfs/commit/909af100bc941e9e5baf0af4313ea5c2e551c2b4", "date" : "17 days ago"}
+		},
+		{"info": 
+			{"event_name":"commented line removed", "event_description":"" ,"link_to_event":"https://github.com/bbfsdev/bbfs/commit/baf2374c515a1dbb765644e35c0d89ef0964b847", "date" : "18 days ago"}
+		} 
+] 
+}
+

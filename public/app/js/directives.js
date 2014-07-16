@@ -9,41 +9,87 @@ angular.module('pulse.directives', []).
       elm.text(version);
     };
   }])
-  .directive('searchableContent', ['$log', function($log) {
+  .directive('searchableContent', [ '$log' , '$filter', function($log, $filter) {
     return {
           restrict: 'E',
            scope: {
             title : '@',
 	    model : '@',
-	    design : '@'
+	    design : '@',
+	    paginate : '@'
           },
 	  replace : true,
 	  controller : "ContentController",
      template: function(tElem, tAttrs){
+     	 var repeatTemplate = 'ng-repeat="data in items | sliceArray: ((pagInfo.currentPage-1)*pagInfo.itemsPerPage):(pagInfo.currentPage*pagInfo.itemsPerPage)"';
 		 var modelType = "models['"+tAttrs['model']+"']";
-	         var temp = '<h4>{{title}}</h4>{{x}}' + 
-                           '<input type="text" placeholder="search.." ng-model="'+ modelType +'.query" />';
+	    var temp = '<h3>{{title}}</h3>{{x}}' + 
+                           '<input type="text" placeholder="search.." ng-model="search.query" ng-keyup="updatePagInfo(search.query)"/>';
+            if (tAttrs['paginate'] == 'true') {  
+			       temp += '<pagination total-items="pagInfo.totalItems" page="pagInfo.currentPage" max-size="pagInfo.maxSize" class="left" boundary-links="true" rotate="false" num-pages="pagInfo.numPages"></pagination>'
+    			            + '<b class="right">Page: {{pagInfo.currentPage}} / {{pagInfo.numPages}}</b><div class="clearfix"></div>';
+    		   }
 	         if (tAttrs['type']=='ul') {
                      temp += '<ul>' +
-				'<li ng-repeat="data in ' + modelType +' | filter:'+modelType+'.query">'+ tElem.html() + '</li>' +
+				'<li '+ repeatTemplate +'>'+ tElem.html() + '</li>' +
 		             '</ul>';
 		      } else if (tAttrs['type']=='ul-2-column') {
 		      	  temp += '<ul id="double" class="two-column">' +
-				'<li class="{{design}}" ng-repeat="data in ' + modelType +' | filter:'+modelType+'.query">'+ tElem.html() + '</li>' +
+				'<li ' + repeatTemplate + '>'+ tElem.html() + '</li>' +
 		             '</ul>';
             } else if (tAttrs['type']=='div') {
-                     temp += '<div class="{{design}}" ng-repeat="data in '+modelType+' | filter:'+modelType+'.query">' +
-				   '<p>' + tElem.html() +'</p>' +
+                     temp += '<div class="{{design}}" ' + repeatTemplate + '>' +
+				   tElem.html() +
 			      '</div>';
+			   
 		 }
                  
 		 return '<div> '+temp+' </div>'; 
           },
 
           link : function(scope, element, attrs) {
-	       	  scope.getContent(scope.model);
+	       	  scope.getContent(scope.model).then(function (data) {
+	       	  		scope.pagInfo = scope.getPaginationObj(scope.model);
+						scope.originalItems = data;
+	       	  		scope.items = data
+	       	  		
+	       	  });
+	       	  
+	       	  scope.updatePagInfo = function(searchQuery) {
+
+	       	 		scope.pagInfo.currentPage = 1;
+	       	 		if (searchQuery.length == 0) {
+	       		 		scope.items = scope.originalItems;
+	      	 	 	} else {
+							scope.items = $filter('filter')(scope.originalItems, searchQuery);	       	 			
+		       	 	}
+		       	 	scope.pagInfo.numPages = Math.ceil(scope.items.length / scope.pagInfo.itemsPerPage);
+						$log.log(scope.pagInfo.numPages);
+	       	  };
+	       	  
           }
 
+    }; 
+  }])
+   .directive('projectGraph', [ '$log' , '$filter', function($log, $filter) {
+    return {
+          restrict: 'E',
+           scope: {
+            projectId : '@',
+            design : '@',
+				mode : '@'
+          },
+	  replace : false,
+	  controller : "ProjectGraphController",
+     template: function(tElem, tAttrs){         
+		 return '<div class="{{design}}"><linechart data="eventGraphData" options="graphOptions" mode="{{mode}}"></linechart></div>'; 
+          },
+
+          link : function(scope, element, attrs) {
+          	
+          	 scope.getProjectGraph(scope.projectId);	       	  
+	       	  
+          }
 
     }; 
   }]);

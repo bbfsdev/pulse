@@ -8,15 +8,18 @@
 angular.module('pulse', [
   'ngRoute',
   'mm.foundation',
+  'n3-line-chart',
   'pulse.filters',
   'pulse.services',
   'pulse.directives',
   'pulse.controllers'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view2', {templateUrl: 'partials/view2.html', controller: 'ContentController'});
+  $routeProvider.when('/main', {templateUrl: 'partials/main.html', controller: 'ContentController'});
   $routeProvider.when('/ask', {templateUrl: 'partials/ask.html', controller: 'ContentController'});
-  $routeProvider.otherwise({redirectTo: '/view2'});
+  $routeProvider.when('/user/:user', {templateUrl: 'partials/user.html', controller: 'UserController'});
+  $routeProvider.when('/project/:project', {templateUrl: 'partials/project.html', controller: 'ProjectController'});
+  $routeProvider.otherwise({redirectTo: '/main'});
 
 }]) // use underscore in the application
 .factory('_', function() {

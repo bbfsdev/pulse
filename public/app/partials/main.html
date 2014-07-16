@@ -1,0 +1,29 @@
+<!-- Tables -->
+
+<div ng-controller="ContentController">
+
+	  <div class="row wide">
+	  
+		  <div class="small-12 medium-6 columns">
+		        
+			     <searchable-content design="panel clearfix" type="div" title="Members (Activity)" model="members" paginate="true">
+				<span class="left"><a href="#user/{{data.info.id}}">{{data.info.name}} {{data.info.family_name}}</a></span>
+				<span class="label round right">{{data.info.activity}}</span>
+                             </searchable-content>
+                          
+		  </div>
+		  <div class="small-12 medium-6 columns">
+	          	
+      		<searchable-content type="div" title="Projects" model="projects" paginate="true">
+						<h3 style="text-align:center;" class="panel">{{data.project}}</h3>
+							<div class="panel callout radius" ng-repeat="board in data.boards">
+								{{board.label}} : {{board.value}}				
+							</div>
+                             </searchable-content>
+                       
+		  </div>
+        
+		  
+	  </div>
+</div>
+

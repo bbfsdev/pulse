@@ -1,0 +1,98 @@
+<!-- Tables -->
+
+<div ng-controller="UserController">
+
+	  <div class="row wide">
+	  
+		  <div class="small-12 medium-6 columns">
+		  		  <div class="row collapse">
+		        	   <img class="left panel callout radius" src="dat/gena.png" width="50", height="50"/><div class="left"><h2>{{userData.info.name}} {{userData.info.family_name}}<small>'s info</small></h2></div>
+		        		<div class="right"><a class="large button round" href="#/">Back to Main</a></div>
+		        		<div  class="clearfix"></div>
+		        	</div>
+		        	<div class="row  collapse">
+
+		        				<div class="small-6 medium-6 columns">
+		        					<div class="panel radius callout">
+										<b>Activity:</b> <span class="label round right">{{userData.info.activity}}</span>		        			
+		        					</div>
+		        					<div class="panel radius" >
+										<b>Trello user:</b> <a class="right" href="{{userData.info.link_to_trello_page}}">{{userData.info.trello_username}}</a>		        			
+		        					</div>
+		        					<div class="panel radius">
+										<b>Github user:</b> <a class="right" href="{{userData.info.link_to_github_page}}">{{userData.info.github_username}}</a>		        			
+		        					</div>
+		        					<div class="panel radius">
+									   <b>Number of projects:</b> <span class="right">{{userData.info.number_of_projects}}</span>							
+									</div>
+									<div class="panel radius">
+										<b>Lines of code:</b> <span class="right">{{userData.info.lines_of_code}}</span>		        			
+		        					</div>
+		        				</div>
+		        				<div class="small-6 medium-6 columns">
+		        					
+		        					<div>
+		        					
+		        						<div class="small-6 medium-6 columns">
+
+		        								<table class="panel radius">
+		        									<tr>
+														<th>Language</th>
+														<th>Usage</th>		        									
+		        									</tr>
+													<tr ng-repeat="language in userData.info.languages"> 
+														<td>{{language.name}}</td><td>{{language.usage}}</td>
+													</tr>
+												</table>
+										</div>
+										<div class="small-6 medium-6 columns">				
+		        						</div>
+									</div>
+								</div>
+						
+		        </div>
+		        <hr/>
+		        
+		  		  <div class="row  collapse">
+		        	   <div class="left"><h2>{{userData.info.name}} {{userData.info.family_name}}<small>'s projects</small></h2></div>
+		        		<div  class="clearfix"></div>
+		        		<div ng-repeat="project in userData.projects" class="row collapse">
+		  							
+		  							<div class="small-6 medium-3 columns">
+		        			   		<h3>{{project.info.name}}</h3>
+		        			   	</div>
+		        			   	
+		        			   	<div class="small-2 medium-1 columns ">
+										 <div class="row align-right">  			   			
+		        			   			<small>{{project.info.lines_of_code}}</small> <img src="img/code_lines_icon.png" />
+										</div>
+										 <div class="row align-right">        			   			
+		        			   			<small>{{project.info.members}}</small> <img src="img/members_icon.png" />
+		        			   		 </div>
+								   </div>
+								   <div class="small-4 columns"></div>
+
+		        			   	<div class="small-12 medium-5 columns">		        			   	
+		        			   		<project-graph project-id="{{project.info.id}}" mode="thumbnail" class="left" design="project-graph-row panel callout radius"></project-graph>
+		        			   	</div>
+		        			   	<div class="small-12 medium-3 columns">
+										<a href="#project/{{project.info.id}}" class="small button secondary round">Go To Project</a>
+									</div>		   		   			        			   	
+		        			   	<hr/>	   	
+		        		</div>
+								
+
+		        </div>
+			  
+		  </div>
+		  <div class="small-12 medium-6 columns">
+	          <h2>{{userData.info.name}} {{userData.info.family_name}}<small>'s events</small></h2>	
+					<div ng-repeat="event in userData.events" class="panel radius">
+							<a href="{{event.info.link_to_event}}">{{event.info.event_name}}</a> {{event.info.event_description}} - {{event.info.date}}					
+					</div>	
+		  </div>
+        
+		  
+	  </div>
+</div>
+
