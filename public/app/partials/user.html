@@ -68,7 +68,6 @@
 		        			   		
 		        			   	</div>
 		        			   	
-		        			   	<!-- can change this to a "language icons panel" directive? -->
 									<div class="small-4 medium-4 columns">		  									
 		        			   		<div class="row align-right">
   												<div ng-repeat="language in project.info.languages | limitTo : 3" class="small-4 medium-4 columns align-right" ng-class="{1:'medium-push-8', 2:'medium-push-4'}[project.info.languages.length]">
@@ -100,22 +99,17 @@
 		        			   	<div class="small-4 medium-3 columns">		        			   	
 		        			   		 <project-graph project-id="{{project.info.id}}" mode="thumbnail" class="left" design="project-graph-row panel callout radius"></project-graph>
 		        			   	</div>
-		        			   	
-		        			   	
-		        			   		
-		        			   		<hr/>
-		        			   		   	
-		        		</div>
-								
-
+	        			   		<hr/>
+                   </div>
+						
 		        </div>
 			  
 		  </div>
 		  <div class="small-12 medium-6 columns">
 	          <h2>{{userData.info.name}} {{userData.info.family_name}}<small>'s events</small></h2>	
-					<div ng-repeat="event in userData.events" class="panel radius">
-							<a href="{{event.info.link_to_event}}">{{event.info.event_name}}</a> {{event.info.event_description}} - {{event.info.date}}					
-					</div>	
+				 <div ng-repeat="event in userData.events" class="panel radius">
+				     <a href="{{event.info.link_to_event}}">{{event.info.event_name}}</a> {{event.info.event_description}} - {{event.info.date}}					
+				 </div>	
 		  </div>
         
 		  
