@@ -34,6 +34,7 @@ angular.module('pulse.controllers', [])
                                          'maxSize' : 5,
                                          'numPages' : Math.ceil(items.length / $scope.itemsPerPage[model]),
                                          'itemsPerPage' : $scope.itemsPerPage[model]
+
                                         };		
 													 
 	}	
