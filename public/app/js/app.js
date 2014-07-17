@@ -16,7 +16,6 @@ angular.module('pulse', [
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/main', {templateUrl: 'partials/main.html', controller: 'ContentController'});
-  $routeProvider.when('/ask', {templateUrl: 'partials/ask.html', controller: 'ContentController'});
   $routeProvider.when('/user/:user', {templateUrl: 'partials/user.html', controller: 'UserController'});
   $routeProvider.when('/project/:project', {templateUrl: 'partials/project.html', controller: 'ProjectController'});
   $routeProvider.otherwise({redirectTo: '/main'});

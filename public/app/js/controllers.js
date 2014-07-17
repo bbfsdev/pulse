@@ -30,11 +30,11 @@ angular.module('pulse.controllers', [])
 			
 			var items = $scope.models[model];
 			$scope.paginationInfo[model] = {'totalItems' : items.length, 
-													  'currentPage' : 1,
-													  'maxSize' : 5,
-													  'numPages' : Math.ceil(items.length / $scope.itemsPerPage[model]),
-													  'itemsPerPage' : $scope.itemsPerPage[model]
-													  };		
+                                         'currentPage' : 1,
+                                         'maxSize' : 5,
+                                         'numPages' : Math.ceil(items.length / $scope.itemsPerPage[model]),
+                                         'itemsPerPage' : $scope.itemsPerPage[model]
+                                        };		
 													 
 	}	
 		
@@ -109,10 +109,7 @@ angular.module('pulse.controllers', [])
   	  									}
   									  ],
   										tooltip: {
-  	  									mode: "scrubber",
-  	  									//formatter: function (x, y, series) {
-  	    								//		return moment(x).fromNow() + ' : ' + y;
-  	  									//}
+  	  									    mode: "scrubber",
   									},
   									stacks: [],
   									lineMode: "bundle",
