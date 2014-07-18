@@ -71,23 +71,29 @@ angular.module('pulse.directives', []).
 
     }; 
   }])
-   .directive('projectGraph', [ '$log' , '$filter', function($log, $filter) {
+   .directive('eventGraph', [ '$log' , '$filter', function($log, $filter) {
     return {
           restrict: 'E',
            scope: {
-            projectId : '@',
             design : '@',
-				mode : '@'
+				    mode : '@',
+            eventsData : '=',
+            seriesType : '@'
           },
-	  controller : "ProjectGraphController",
+	  controller : "GraphController",
      template: function(tElem, tAttrs){         
 		 return '<div class="{{design}}"><linechart data="eventGraphData" options="graphOptions" mode="{{mode}}"></linechart></div>'; 
           },
 
           link : function(scope, element, attrs) {
-          	
-          	 scope.getProjectGraph(scope.projectId);	       	  
-	       	  
+
+             $log.log("event data from directive: " + JSON.stringify(scope.eventsData));
+             scope.graphOptions['series'][0]['type'] = scope.seriesType;
+
+             scope.$watch('eventsData', function() {
+                scope.buildEventGraphData(scope.eventsData);      
+              });
+          	   	  
           }
 
     }; 

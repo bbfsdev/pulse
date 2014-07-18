@@ -1,55 +1,8 @@
 /* app css stylesheet */
 
-.menu {
-  list-style: none;
-  /*border-bottom: 0.1em solid black;*/
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
-}
-/*
-.menu:before {
-  content: "[";
-}
-
-.menu:after {
-  content: "]";
-}*/
-
-.menu > li {
-  display: inline;
-}
-
-.menu > li:before {
-  content: "|";
-  padding-right: 0.3em;
-}
-
-.menu > li:nth-child(1):before {
-  content: "";
-  padding: 0;
-}
-
 .wide {
   max-width: 92.5rem;
-}
-
-ul.two-column{
-  overflow:hidden;
-  width: auto;
-  list-style: none;
-  padding:0; margin:0;
-}
-
-ul.two-column > li{
-  float:left;
-  display:inline;
-}
-
-ul.two-column > li:nth-child(2n) {
-	margin-left: 2%;
-}
-
-#double li  { width:49%;} 
+} 
 
 .panel {
    padding: 0.25rem;
@@ -69,29 +22,34 @@ ul.two-column > li:nth-child(2n) {
 }
 
 .project-graph-row{
-
     display: block;
-    width: 180px;
-    height: 32px;
+    width: 11rem;
+    height: 1.8rem;
     padding: 0.5rem;
     border-style: solid;
-    border-width: 1px;
+    border-width: 0.2rem;
+}
+
+.member-graph-small{
+    display: block;
+    width: 5rem;
+    height: 1.1rem;
+    padding: 0;
 }
 
  @media only screen and (max-width: 40em) {
  .project-graph-row{
-
     display: block;
-    width: 7em;
-    height: 1.5em;
+    width: 6rem;
+    height: 1.5rem;
     padding: 0.5rem;
     border-style: solid;
-    border-width: 1px;
-}
+    border-width: 0.2rem;
+  }
  }
 
 .project-graph-detailed {
-    height: 200px;
+    height: 10rem;
 }
 
 .align-right {
@@ -104,4 +62,7 @@ ul.two-column > li:nth-child(2n) {
 }
 
 
+[class*="block-grid-"] > li {
+  padding: 0 0.1rem 0.1rem; 
+}
 
