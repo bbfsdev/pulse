@@ -1,0 +1,81 @@
+<!-- Tables -->
+
+<div ng-controller="ProjectController">
+
+	  <div class="row wide">
+	  
+		  <div class="small-12 medium-6 columns">
+		  		  <div class="row collapse">
+		        	   <div class="left"><h2>{{projectData.info.name}}</h2></div>
+		        		<div class="right"><a class="large button round" href="#/">Back to Main</a></div>
+		        		<div  class="clearfix"></div>
+		        	</div>
+		        	<div class="row  collapse">
+								<h3>What is <b>{{projectData.info.name}}</b> ?</h3>
+								<div >
+									<p>{{projectData.info.description}}</p>								
+								</div>
+								
+								<div class="small-6 medium-6 columns">
+		    						<div class="panel radius">
+										<b>Lines of code:</b> <span class="right">{{projectData.info.lines_of_code}}</span>		        			
+	        						</div>
+	        						<div class="panel radius" >
+										<b>Trello:</b> <a class="right" href="{{projectData.info.link_to_trello}}">{{projectData.info.link_to_trello}}</a>		        			
+		        					</div>
+		        					<div class="panel radius">
+										<b>Github:</b> 
+										<div class="right" ng-repeat="github in projectData.info.links_to_github">
+											<div ng-repeat="(key, link) in github">
+												<a  href="{{link}}">{{key}}</a>
+   											</div>
+										</div>			        			
+		        					</div>
+		       					
+		        				</div>
+		        				<div class="small-6 medium-6 columns">
+		        					
+		        					<div>
+		        					
+		        						<div class="small-6 medium-6 columns">
+
+		        								<table class="panel radius">
+		        									<tr>
+														<th>Language</th>
+														<th>Usage</th>		        									
+		        									</tr>
+													<tr ng-repeat="language in projectData.info.languages"> 
+														<td>{{language.name}}</td><td>{{language.usage}}</td>
+													</tr>
+												</table>
+										</div>
+										<div class="small-6 medium-6 columns">				
+		        						</div>
+									</div>
+								</div>
+								
+		        </div>
+				<hr/>
+					<div class="row  collapse">
+								<h3>Members</h3>
+								<ul id="double" class="two-column">
+									<li ng-repeat="member in projectData.members">
+										<a href="#user/{{member.info.id}}"><img class="panel callout radius" src="dat/gena.png" width="50" height="50"/> {{member.info.name}} {{member.info.family_name}}</a>									
+									</li>
+								</ul>
+					</div>
+					
+			  
+		  </div>
+		  <div class="small-12 medium-6 columns">
+	          <h2>{{projectData.info.name}}<small>'s events</small></h2>	
+	          	<project-graph project-id="{{project.info.id}}" design="project-graph-detailed panel callout radius"></project-graph>
+					<div ng-repeat="event in projectData.events" class="panel radius">
+							<a href="{{event.info.link_to_event}}">{{event.info.event_name}}</a> {{event.info.event_description}} - {{event.info.date | coolDate}}					
+					</div>	
+		  </div>
+        
+		  
+	  </div>
+</div>
+
