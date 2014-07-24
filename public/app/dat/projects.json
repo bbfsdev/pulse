@@ -1,1 +1,29 @@
-[{"project":"pulse","boards":[{"label":"Discussions and Links","value":7},{"label":"To Do","value":4},{"label":"Doing","value":1},{"label":"Done","value":11}]},{"project":"groupcam","boards":[{"label":"To Do","value":18},{"label":"Doing","value":1},{"label":"Done","value":15}]},{"project":"bbfs","boards":[{"label":"Discussions and Links","value":2},{"label":"TODO","value":5},{"label":"Doing","value":2},{"label":"Done","value":12}]}]
+[
+{"info": 
+	{"id" : "1" , "name" : "BBFS", "description": "BBFS is a content backup tool which is used for backing up media file 24/7. This tool indexes and manages hundreds of thousands of files and dozen TB of data with rapid monthly grows. It's purpose is to backup large amounts of importent data with high flow speeds." ,"lines_of_code" : "43500", "link_to_trello":"http://www.trello.com/bbfs", "languages":[{"name":"ruby", "usage":"70%"}, {"name":"cpp", "usage":"2%"}, {"name":"css", "usage":"1%"}, {"name":"xml", "usage":"10%"}, {"name":"java", "usage":"10%"}, {"name":"python", "usage":"7%"}]  , "links_to_github":[{"asdasd":"http://www.github.com/bbfsdev/bbfs"}], "members":"8"}
+},
+{"info": 
+	{"id" : "2" , "name" : "Round Tables", "description": "" ,"lines_of_code" : "2188", "link_to_trello":"http://www.trello.com/bbfs", "languages":[{"name":"ruby", "usage":"21%"}, {"name":"cpp", "usage":"89%"}]  , "links_to_github":[{"asdasd":"http://www.github.com/bbfsdev/bbfs"}], "members":"4"}
+},
+{"info": 
+	{"id" : "3" , "name" : "Sviva Tova", "description": "" ,"lines_of_code" : "9610", "link_to_trello":"http://www.trello.com/sviva", "languages":[{"name":"python", "usage":"34%"}, {"name":"css", "usage":"33%"}, {"name":"xml", "usage":"33%"}]  , "links_to_github":[{"asdasd":"http://www.github.com/bbfsdev/bbfs"}], "members":"5"}
+},
+{"info": 
+	{"id" : "4" , "name" : "Pulse", "description": "" ,"lines_of_code" : "73142", "link_to_trello":"http://www.trello.com/pulse", "languages":[{"name":"java", "usage":"58%"}, {"name":"cpp", "usage":"58%"}]  , "links_to_github":[{"asdasd":"http://www.github.com/bbfsdev/bbfs"}], "members":"2"}
+},
+{"info": 
+	{"id" : "5" , "name" : "Chat", "description": "" ,"lines_of_code" : "171444", "link_to_trello":"http://www.trello.com/chat", "languages":[{"name":"xml", "usage":"100%"}]  , "links_to_github":[{"asdasd":"http://www.github.com/bbfsdev/bbfs"}], "members":"12"}
+},
+{"info": 
+	{"id" : "6" , "name" : "Flash Player", "description": "" ,"lines_of_code" : "342", "link_to_trello":"http://www.trello.com/flash", "languages":[{"name":"cpp", "usage":"48%"}, {"name":"python", "usage":"52%"}]  , "links_to_github":[{"asdasd":"http://www.github.com/bbfsdev/bbfs"}], "members":"2"}
+},
+{"info": 
+	{"id" : "7" , "name" : "Kab website", "description": "" ,"lines_of_code" : "6641", "link_to_trello":"http://www.trello.com/kab", "languages":[{"name":"java", "usage":"96%"}, {"name":"cpp", "usage":"4%"}]  , "links_to_github":[{"asdasd":"http://www.github.com/bbfsdev/bbfs"}], "members":"2"}
+},
+{"info": 
+	{"id" : "8" , "name" : "Friend Center", "description": "" ,"lines_of_code" : "15466", "link_to_trello":"http://www.trello.com/friend", "languages":[{"name":"ruby", "usage":"58%"}, {"name":"cpp", "usage":"42%"}]  , "links_to_github":[{"asdasd":"http://www.github.com/bbfsdev/bbfs"}], "members":"8"}
+}
+
+
+
+]

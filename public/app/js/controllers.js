@@ -13,7 +13,7 @@ angular.module('pulse.controllers', [])
 	$scope.models = {};
    $scope.paginationInfo = {};	
    $scope.itemsPerPage = {};
-   $scope.itemsPerPage['projects'] = 3;
+   $scope.itemsPerPage['projects'] = 6;
    $scope.itemsPerPage['members'] = 12;
 	
 	$scope.getContent = function(model) {
@@ -35,6 +35,8 @@ angular.module('pulse.controllers', [])
                                      	'numPages' : Math.ceil(items.length / $scope.itemsPerPage[model]),
                                      	'itemsPerPage' : $scope.itemsPerPage[model]
                                     	};		
+                                    	$log.log($scope.models[model] + "  items length : "+items.length+ " |   per page:" + $scope.itemsPerPage[model]);
+                                    	$log.log("math ceil : " + Math.ceil(items.length / $scope.itemsPerPage[model]));
 	}	
 		
 	$scope.getPaginationObj = function(model) {
@@ -66,60 +68,61 @@ angular.module('pulse.controllers', [])
   }]).controller('GraphController', ['$scope', '$routeParams', '$q', 'ProjectService' ,'$log', '_' ,
         function($scope, $routeParams, $q,  ProjectService, $log, _) {
       	
-		$scope.eventGraphData = [];	 
-		var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-		var currentDate = new Date();
-		
+			$scope.eventGraphData = [];	 
+			var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+			var currentDate = new Date();
 			
-	 	$scope.graphOptions = {
- 						 	axes: {x: {type: "linear", labelFunction: function(value) {return months[currentDate.getMonth()] + ' ' + (value+1);}}, y: {type: "linear"}},
-  							series: [
-   	 								{
-    									y: "value",
-    									label: "Events",
-    									color: "black",
-    									type: "area",
-    									axis: "y",
-    									thickness: "1px",
-    									id: "series_0"
-  	  									}
-  									  ],
-  										tooltip: {
-  	  									    mode: "scrubber",
-  									},
-  									stacks: [],
-  									lineMode: "bundle",
-  									tension: 0.7,
-  									drawLegend: false,
-  									drawDots: false
-							};
-		$scope.buildEventGraphData = function (events) {
-		
-			// event dates to number of events per day in month back from today
-		 	if (typeof events !== 'undefined' && events.length > 0) {
+				
+		 	$scope.graphOptions = {
+	 						 	axes: {x: {type: "linear", labelFunction: function(value) {return months[currentDate.getMonth()] + ' ' + (value+1);}}, y: {type: "linear"}},
+	  							series: [
+	   	 								{
+	    									y: "value",
+	    									label: "Events",
+	    									color: "black",
+	    									type: "area",
+	    									axis: "y",
+	    									thickness: "1px",
+	    									id: "series_0"
+	  	  									}
+	  									  ],
+	  										tooltip: {
+	  	  									    mode: "scrubber",
+	  									},
+	  									stacks: [],
+	  									lineMode: "bundle",
+	  									tension: 0.7,
+	  									drawLegend: false,
+	  									drawDots: false
+								};
+			$scope.buildEventGraphData = function (events) {
+				$scope.eventGraphData = [];
+				// event dates to number of events per day in month back from today
+			 	
 		 		var curMonth = {};
 
 		 		var currentDate = new Date()
 		 		var daysThisMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 0).getDate();
-
+		 		
 		 		_.times(daysThisMonth, function(index){ curMonth[index] = 0; });
 
-				_.each(events, function(projectEvent){
-					$log.log(projectEvent.info.date);
-					var exactDate = new Date(projectEvent.info.date*1000);
+		 		if (typeof events !== 'undefined' && events.length > 0) {	
 
-					curMonth[exactDate.getDate()] = parseInt(curMonth[exactDate.getDate()])+1;
-					
-				});
+		 			
+					_.each(events, function(projectEvent){
+						var exactDate = new Date(projectEvent.info.date*1000);
+						curMonth[exactDate.getDate()] = parseInt(curMonth[exactDate.getDate()])+1;					
+					});
+				}
+
 				
 				_.map(curMonth, function(num, key){ 
 					$scope.eventGraphData.push({x: parseInt(key), value: num});
+					
 				});
+				$log.log(JSON.stringify($scope.eventGraphData));
 				
-			 	}
- 			 
-
-		}
+			}
 		
   }])
 .controller('ProjectGraphController', ['$scope', 'ProjectService' ,'$log' ,
