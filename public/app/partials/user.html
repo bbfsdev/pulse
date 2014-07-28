@@ -6,20 +6,25 @@
 	  
 		  <div class="small-12 medium-6 columns">
 		  		    <div class="row collapse">
-		        	   <img class="left panel callout radius" src="dat/gena.png" width="50", height="50"/><div class="left"><h2>{{userData.info.name}} {{userData.info.family_name}}<small>'s info</small></h2></div>
-		        		<div class="right"><a class="show-for-medium-up large button round" href="#/">Back to Main</a></div>
-		        		<div  class="clearfix"></div>
+		  		    	<div class="small-3 medium-2 large-1 columns">
+		        			<div class="row">
+		        				<img class="panel callout radius profile-pic" src="dat/gena.png"/>
+		        			</div>
+		        		</div>
+		        		<div class="small-9 medium-5 large-6 columns" >
+		        			<div class="row">
+		        				<p style=" margin-bottom: 0.55rem;"><h2>{{userData.info.name}} {{userData.info.family_name}}</h2></p>
+		        			</div>
+		        	    </div>
+		        	    <div class="small-12 medium-5 columns">
+		        	    	<div class="row panel radius callout">
+		        	    		<event-graph events-data="userData.events" series-type="line" mode="thumbnail" design="member-graph-profile"></event-graph>	
+		        	    	</div>
+		        	    </div>
 		        	</div>
 		        	<div class="row  collapse">
 
-        				<div class="small-12 medium-6 columns">
-        					<div class="panel radius callout">
-        						<div class="row">
-										<b>Activity:</b>
-										<event-graph events-data="userData.events" series-type="line" mode="thumbnail" class="right" design="member-graph-small"></event-graph>
-									
-								</div>
-        					</div>
+        				<div class="small-12 medium-8 large-6 columns">
         					<div class="row">
         						<div class="panel radius" >
 									<b>Trello user:</b> <a class="right" href="{{userData.info.link_to_trello_page}}">{{userData.info.trello_username}}</a>		        			
@@ -41,7 +46,7 @@
         						</div>
         					</div>
         				</div>
-        				<div class="small-12 medium-6 columns">
+        				<div class="small-12 medium-4 large-6 columns">
         					
         					<div class="row collapse">
         					

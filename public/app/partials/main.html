@@ -4,22 +4,24 @@
   <div class="small-12 medium-6 columns">
     <searchable-content design="panel clearfix" title="Members (Activity)" model="members" paginate="true">
     	<div class="row collapse">
-    		<div class="small-4 medium-5 columns">
-	    		<span class="left"><a href="#user/{{data.info.id}}">{{data.info.name}} {{data.info.family_name}}</a></span>
+    		<div class="small-9 medium-4 columns">
+	    		<a href="#user/{{data.info.id}}">{{data.info.name}} {{data.info.family_name}}</a>
 	    	</div>
-	    	<div class="small-6 medium-6 columns">
-	    		<div class="row collapse">
-	    			<div ng-if="data.info.languages.length < 6">
-			    		<div class="small-{{(12-(data.info.languages.length*2))}} medium-{{(12-(data.info.languages.length*2))}} columns">
-			    		&nbsp;</div>
-			    	</div>
-	    			<div ng-repeat="language in data.info.languages | limitTo : 6" class="small-2 medium-2 columns">
-			    		<small>{{language.usage}}</small> <icon of="{{language.name}}" />
-			    	</div>
-	    		</div>
+	    	<div class="small-1 medium-6 columns">
+	    		<div class="hide-for-small">
+		    		<div class="row collapse">
+		    			<div ng-if="data.info.languages.length < 6">
+				    		<div class="small-{{(12-(data.info.languages.length*2))}} medium-{{(12-(data.info.languages.length*2))}} columns">
+				    		&nbsp;</div>
+				    	</div>
+		    			<div ng-repeat="language in data.info.languages | limitTo : 6" class="small-2 medium-2 columns">
+				    		 <span class="has-tip" tooltip="{{language.name}}" tooltip-append-to-body="true" tooltip-placement="top"><small>{{language.usage}}</small><icon of="{{language.name}}" /></span>
+				    	</div>
+		    		</div>
+		    	</div>
 	    	</div>
 	    		    	
-	    	<div class="small-2 medium-1 columns">
+	    	<div class="small-2 medium-2 columns">
 	    		<event-graph events-data="data.events" series-type="line" class="right" mode="thumbnail" design="member-graph-tiny"></event-graph>
 	    	</div>
 
@@ -32,7 +34,7 @@
   <div class="small-12 medium-6 columns">
     <searchable-content design=" clearfix" title="Projects" model="projects" paginate="true">
 		<project-row project="data" class="row collapse"></project-row>	
-    </searchable-content>          
+    </searchable-content>        
   </div>
 </div>
 

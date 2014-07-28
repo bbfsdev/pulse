@@ -18,7 +18,7 @@
 				</div>
 				<div class="row collapse">
 					
-					<div class="small-12 medium-6 columns">
+					<div class="small-12 medium-8 columns">
 						<div class="row">
 							<div class="panel radius">
 								<b>Lines of code:</b> <span class="right">{{projectData.info.lines_of_code}}</span>		        			
@@ -41,7 +41,7 @@
 	    				</div>
    					
     				</div>
-    				<div class="small-12 medium-6 columns">
+    				<div class="small-12 medium-4 columns">
     					
     					<div class="row collapse">
     					
@@ -66,15 +66,30 @@
 				<hr/>
 					<div class="row collapse">
 						<h3>Members</h3>
-						<ul class="small-block-grid-1 medium-block-grid-2">
-							<li ng-repeat="member in projectData.members">
-								<div class="small-8 medium-8 columns">
-									<a href="#user/{{member.info.id}}"><img class="panel callout radius" src="dat/gena.png" width="50" height="50"/> {{member.info.name}} {{member.info.family_name}}</a>
-								</div>
-								<div class="small-4 medium-4 columns">
-								</div>
-							</li>
-						</ul>
+						<div class="row collapse panel radius" ng-repeat="member in projectData.members">
+				    		<div class="small-9 medium-4 columns">
+					    		<a href="#user/{{member.info.id}}">{{member.info.name}} {{member.info.family_name}}</a>
+					    	</div>
+					    	<div class="small-1 medium-6 columns">
+					    		<div class="hide-for-small">
+						    		<div class="row collapse">
+						    			<div ng-if="member.info.languages.length < 6">
+								    		<div class="small-{{(12-(member.info.languages.length*2))}} medium-{{(12-(member.info.languages.length*2))}} columns">
+								    		&nbsp;</div>
+								    	</div>
+						    			<div ng-repeat="language in member.info.languages | limitTo : 6" class="small-2 medium-2 columns">
+								    		 <span class="has-tip" tooltip="{{language.name}}" tooltip-append-to-body="true" tooltip-placement="top"><small>{{language.usage}}</small><icon of="{{language.name}}" /></span>
+								    	</div>
+						    		</div>
+						    	</div>
+					    	</div>
+					    		    	
+					    	<div class="small-2 medium-2 columns">
+					    		<event-graph events-data="member.events" series-type="line" class="right" mode="thumbnail" design="member-graph-tiny"></event-graph>
+					    	</div>
+
+					    </div>
+						
 					</div>
 					
 			<hr class="show-for-small-only"/>   

@@ -25,7 +25,7 @@ angular.module('pulse.directives', []).
         var temp = '<h3>{{title}}</h3>' + 
                    '<input type="text" placeholder="search.." ng-model="search.query" ng-keyup="updatePagInfo(search.query)"/>';
             if (tAttrs['paginate'] == 'true') {  
-               temp += '<pagination total-items="pagInfo.totalItems" page="pagInfo.currentPage" num-pages="pagInfo.numPages" class="left" boundary-links="true" rotate="false" ></pagination>'
+               temp += '<pagination total-items="pagInfo.totalItems" page="pagInfo.currentPage" num-pages="pagInfo.numPages" class="left" rotate="false" ></pagination>'
                     + '<b class="right">Page: {{pagInfo.currentPage}} / {{pagInfo.numPages}}</b><div class="clearfix"></div>';
             } 
             temp += '<div class="{{design}}" ng-repeat="data in items | sliceArray: ((pagInfo.currentPage-1)*pagInfo.itemsPerPage):(pagInfo.currentPage*pagInfo.itemsPerPage)" ng-transclude>' +
