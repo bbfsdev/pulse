@@ -14,14 +14,14 @@ angular.module('pulse.directives', []).
       restrict: 'E',
       scope: {
        title : '@',
-	     model : '@',
-	     design : '@',
-	     paginate : '@'
+       model : '@',
+       design : '@',
+       paginate : '@'
       },
-	    controller : "ContentController",
+      controller : "ContentController",
       transclude: true,
       template: function(tElem, tAttrs){
-     	  var modelType = "models['"+tAttrs['model']+"']";
+        var modelType = "models['"+tAttrs['model']+"']";
         var temp = '<h3>{{title}}</h3>' + 
                    '<input type="text" placeholder="search.." ng-model="search.query" ng-keyup="updatePagInfo(search.query)"/>';
             if (tAttrs['paginate'] == 'true') {  
@@ -34,12 +34,12 @@ angular.module('pulse.directives', []).
             return temp; 
           },
 
-            link : function(scope, element, attrs) {
-	       	      scope.getContent(scope.model).then(function (data) {
-     	  		    scope.pagInfo = scope.getPaginationObj(scope.model);
-						    scope.originalItems = data;
-     	  		    scope.items = data;	
-	       	  });
+          link : function(scope, element, attrs) {
+              scope.getContent(scope.model).then(function (data) {
+              scope.pagInfo = scope.getPaginationObj(scope.model);
+              scope.originalItems = data;
+              scope.items = data;	
+          });
 	       	  
 	       	  scope.updatePagInfo = function(searchQuery) {
 
@@ -61,7 +61,7 @@ angular.module('pulse.directives', []).
           restrict: 'E',
            scope: {
             design : '@',
-				    mode : '@',
+            mode : '@',
             eventsData : '=',
             seriesType : '@'
           },
@@ -71,8 +71,8 @@ angular.module('pulse.directives', []).
           },
 
           link : function(scope, element, attrs) {
-             scope.graphOptions['series'][0]['type'] = scope.seriesType;
-             scope.$watch('eventsData', function() {
+              scope.graphOptions['series'][0]['type'] = scope.seriesType;
+              scope.$watch('eventsData', function() {
                 scope.buildEventGraphData(scope.eventsData);      
               });
           	   	  
@@ -83,7 +83,7 @@ angular.module('pulse.directives', []).
    .directive('projectRow', [ '$log' , '$filter', function($log, $filter) {
     return {
           restrict: 'E',
-           scope: {
+          scope: {
             project : '='
           },
           templateUrl: 'templates/project_row_template.html'
@@ -93,7 +93,7 @@ angular.module('pulse.directives', []).
   .directive('icon', [ function() {
     return {
           restrict: 'E',
-           scope: {
+          scope: {
             of : '@'
           },
 	  replace : true,

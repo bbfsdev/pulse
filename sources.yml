@@ -1,7 +1,7 @@
 trello:
-  developer_public_key: f239f9ec77213b9978ee4ac363df473b
-  member_token: abd159f16d4e22f11bf8da0ea6504759bde4cdd76fb82c719ea3b6cbe02699eb
+  developer_public_key: ***
+  member_token: ***
   boards:
-    pulse: 53324a5fc49c23676256ba85
-    groupcam: 52fcf7b765a307871298187b
-    bbfs: 52aa10f8211067ad12006ebe
+    pulse: ***
+    groupcam: ***
+    bbfs: ***
