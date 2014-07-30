@@ -11,10 +11,10 @@
 ],
 "events": [ 
 		{"info": 
-			{"event_name":"bug fixed", "event_description":"fixed a bug that was buggy" ,"link_to_event":"https://github.com/bbfsdev/bbfs/commit/909af100bc941e9e5baf0af4313ea5c2e551c2b4", "date" : "17 days ago"}
+			{"event_name":"bug fixed", "event_description":"fixed a bug that was buggy" ,"link_to_event":"https://github.com/bbfsdev/bbfs/commit/909af100bc941e9e5baf0af4313ea5c2e551c2b4", "date" : "1396790640"}
 		},
 		{"info": 
-			{"event_name":"commented line removed", "event_description":"" ,"link_to_event":"https://github.com/bbfsdev/bbfs/commit/baf2374c515a1dbb765644e35c0d89ef0964b847", "date" : "18 days ago"}
+			{"event_name":"commented line removed", "event_description":"" ,"link_to_event":"https://github.com/bbfsdev/bbfs/commit/baf2374c515a1dbb765644e35c0d89ef0964b847", "date" : "1396790640"}
 		} 
 ] 
 }

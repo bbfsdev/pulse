@@ -1,55 +1,8 @@
 /* app css stylesheet */
 
-.menu {
-  list-style: none;
-  /*border-bottom: 0.1em solid black;*/
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
-}
-/*
-.menu:before {
-  content: "[";
-}
-
-.menu:after {
-  content: "]";
-}*/
-
-.menu > li {
-  display: inline;
-}
-
-.menu > li:before {
-  content: "|";
-  padding-right: 0.3em;
-}
-
-.menu > li:nth-child(1):before {
-  content: "";
-  padding: 0;
-}
-
 .wide {
   max-width: 92.5rem;
-}
-
-ul.two-column{
-  overflow:hidden;
-  width: auto;
-  list-style: none;
-  padding:0; margin:0;
-}
-
-ul.two-column > li{
-  float:left;
-  display:inline;
-}
-
-ul.two-column > li:nth-child(2n) {
-	margin-left: 2%;
-}
-
-#double li  { width:49%;} 
+} 
 
 .panel {
    padding: 0.25rem;
@@ -69,39 +22,167 @@ ul.two-column > li:nth-child(2n) {
 }
 
 .project-graph-row{
-
     display: block;
-    width: 180px;
-    height: 32px;
+    width: 11rem;
+    height: 1.8rem;
     padding: 0.5rem;
     border-style: solid;
-    border-width: 1px;
+    border-width: 0.2rem;
 }
+
+.member-graph-small{
+    display: block;
+    width: 5rem;
+    height: 1.1rem;
+    padding: 0;
+}
+
+.member-graph-tiny{
+    display: block;
+    width: 4rem;
+    height: 1.1rem;
+    padding: 0;
+}
+
 
  @media only screen and (max-width: 40em) {
  .project-graph-row{
-
     display: block;
-    width: 7em;
-    height: 1.5em;
+    width: 3rem;
+    height: 1.5rem;
     padding: 0.5rem;
     border-style: solid;
-    border-width: 1px;
+    border-width: 0.2rem;
+  }
+
+  .profile-pic {
+    width: 3.4rem;
+    height: 3.4rem;
+  }
+
+  .small-profile-pic {
+    width : 2rem;
+    height : 2rem;
+    margin: 0 !important;
+  }
+
+  .member-graph-profile {
+    height: 3.3rem;
+  }
+
+  .icon {
+    width: 0.6em;
+    height: 0.6em;
+  }
+
+  /* tool tip layout fix for mobile */
+  .tooltip > .nub {
+    border-color:  #333333 transparent transparent transparent ;
+    top: -10px; }
+  .tooltip.tip-top > .nub {
+    border-color: #333333 transparent transparent transparent;
+    top: auto;
+    bottom: -10px; }
 }
- }
+
+
+
+@media  only screen and (min-width: 40em) {
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .project-graph-row{
+    display: block;
+    width: 4.5rem;
+    height: 1.5rem;
+    padding: 0.5rem;
+    border-style: solid;
+    border-width: 0.2rem;
+  }
+
+  .profile-pic {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .small-profile-pic {
+    width : 2rem;
+    height : 2rem;
+    margin: 0 !important;
+  }
+
+  .member-graph-profile {
+    height: 2.5rem;
+  }
+
+  .icon {
+    width: 0.8em;
+    height: 0.8em;
+  }
+
+  .left-border {
+    border-left:0.4rem solid #e9e9e9;
+    height:2.2rem;
+  }
+}
+
+@media only screen and (min-width:64.063em) { 
+
+  h2 {
+    font-size: 2.658rem;
+  }
+
+  .project-graph-row{
+    display: block;
+    width: 5.5rem;
+    height: 1.5rem;
+    padding: 0.5rem;
+    border-style: solid;
+    border-width: 0.2rem;
+  }
+
+  .profile-pic {
+    width: 3.4rem;
+    height: 3.4rem;
+  }
+  .member-graph-profile {
+    height: 3.3rem;
+  }
+
+  .icon {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  
+}
+
+
+ 
 
 .project-graph-detailed {
-    height: 200px;
+    height: 10rem;
 }
 
 .align-right {
 	text-align: right;
 }
 
-.icon {
-	width: 16px;
-	height: 16px;
+
+[class*="block-grid-"] > li {
+  padding: 0 0.1rem 0.1rem; 
 }
 
+.fade {
+  opacity: 0;
+  -webkit-transition: opacity .15s linear;
+          transition: opacity .15s linear;
+}
+.fade.in {
+  opacity: 1;
+}
 
-
+.space-bottom {
+  margin-bottom: 0.3em;
+}
