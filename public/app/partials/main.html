@@ -4,8 +4,17 @@
   <div class="small-12 medium-6 columns">
     <searchable-content design="panel clearfix" title="Members (Activity)" model="members" paginate="true">
     	<div class="row collapse">
-    		<div class="small-9 medium-4 columns">
-	    		<a href="#user/{{data.info.id}}">{{data.info.name}} {{data.info.family_name}}</a>
+    		<div class="small-2 medium-1 columns">
+    			<img class="panel callout radius small-profile-pic" src="dat/gena.png"/>
+    		</div>
+    		<div class="small-7 medium-3 columns" style="vertical-align: center;">
+    			<div class="row collapse" >
+    				<a href="#user/{{data.info.id}}">{{data.info.name}}</a>
+    			</div>
+    			<div class="row collapse">
+    				<a href="#user/{{data.info.id}}">{{data.info.family_name}}</a>
+    			</div>
+	    		 
 	    	</div>
 	    	<div class="small-1 medium-6 columns">
 	    		<div class="hide-for-small">

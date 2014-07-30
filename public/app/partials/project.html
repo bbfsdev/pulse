@@ -31,7 +31,7 @@
     					</div>
     					<div class="row">
     						<div class="panel radius">
-								<b>Github:</b> 
+								<b>Github:</b>
 								<div class="right" ng-repeat="github in projectData.info.links_to_github">
 									<div ng-repeat="(key, link) in github">
 										<a  href="{{link}}">{{key}}</a>
@@ -66,28 +66,38 @@
 				<hr/>
 					<div class="row collapse">
 						<h3>Members</h3>
-						<div class="row collapse panel radius" ng-repeat="member in projectData.members">
-				    		<div class="small-9 medium-4 columns">
-					    		<a href="#user/{{member.info.id}}">{{member.info.name}} {{member.info.family_name}}</a>
-					    	</div>
-					    	<div class="small-1 medium-6 columns">
-					    		<div class="hide-for-small">
-						    		<div class="row collapse">
-						    			<div ng-if="member.info.languages.length < 6">
-								    		<div class="small-{{(12-(member.info.languages.length*2))}} medium-{{(12-(member.info.languages.length*2))}} columns">
-								    		&nbsp;</div>
-								    	</div>
-						    			<div ng-repeat="language in member.info.languages | limitTo : 6" class="small-2 medium-2 columns">
-								    		 <span class="has-tip" tooltip="{{language.name}}" tooltip-append-to-body="true" tooltip-placement="top"><small>{{language.usage}}</small><icon of="{{language.name}}" /></span>
-								    	</div>
-						    		</div>
+						<div class="space-bottom" ng-repeat="member in projectData.members">
+							<div class="row collapse panel radius" >
+								<div class="small-2 medium-1 columns">
+					    			<img class="panel callout radius small-profile-pic" src="dat/gena.png"/>
+					    		</div>
+					    		<div class="small-7 medium-3 columns">
+						    		<div class="row collapse" >
+					    				<a href="#user/{{data.info.id}}">{{member.info.name}}</a>
+					    			</div>
+					    			<div class="row collapse">
+					    				<a href="#user/{{data.info.id}}">{{member.info.family_name}}</a>
+					    			</div>
 						    	</div>
-					    	</div>
-					    		    	
-					    	<div class="small-2 medium-2 columns">
-					    		<event-graph events-data="member.events" series-type="line" class="right" mode="thumbnail" design="member-graph-tiny"></event-graph>
-					    	</div>
+						    	<div class="small-1 medium-6 columns">
+						    		<div class="hide-for-small">
+							    		<div class="row collapse">
+							    			<div ng-if="member.info.languages.length < 6">
+									    		<div class="small-{{(12-(member.info.languages.length*2))}} medium-{{(12-(member.info.languages.length*2))}} columns">
+									    		&nbsp;</div>
+									    	</div>
+							    			<div ng-repeat="language in member.info.languages | limitTo : 6" class="small-2 medium-2 columns">
+									    		 <span class="has-tip" tooltip="{{language.name}}" tooltip-append-to-body="true" tooltip-placement="top"><small>{{language.usage}}</small><icon of="{{language.name}}" /></span>
+									    	</div>
+							    		</div>
+							    	</div>
+						    	</div>
+						    		    	
+						    	<div class="small-2 medium-2 columns">
+						    		<event-graph events-data="member.events" series-type="line" class="right" mode="thumbnail" design="member-graph-tiny"></event-graph>
+						    	</div>
 
+						    </div>
 					    </div>
 						
 					</div>
