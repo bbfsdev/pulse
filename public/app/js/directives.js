@@ -38,20 +38,20 @@ angular.module('pulse.directives', []).
               scope.getContent(scope.model).then(function (data) {
               scope.pagInfo = scope.getPaginationObj(scope.model);
               scope.originalItems = data;
-              scope.items = data;	
+              scope.items = data; 
           });
-	       	  
-	       	  scope.updatePagInfo = function(searchQuery) {
+            
+            scope.updatePagInfo = function(searchQuery) {
 
-	       	 		scope.pagInfo.currentPage = 1;
-	       	 		if (searchQuery.length == 0) {
-	       		 		scope.items = scope.originalItems;
-	      	 	 	} else {
-							  scope.items = $filter('filter')(scope.originalItems, searchQuery);	       	 			
-		       	 	}
-		       	 	  scope.pagInfo.numPages = Math.ceil(scope.items.length / scope.pagInfo.itemsPerPage);
-	       	  };
-	       	  
+              scope.pagInfo.currentPage = 1;
+              if (searchQuery.length == 0) {
+                scope.items = scope.originalItems;
+              } else {
+                scope.items = $filter('filter')(scope.originalItems, searchQuery);                
+              }
+                scope.pagInfo.numPages = Math.ceil(scope.items.length / scope.pagInfo.itemsPerPage);
+            };
+            
           }
 
     }; 
@@ -65,9 +65,9 @@ angular.module('pulse.directives', []).
             eventsData : '=',
             seriesType : '@'
           },
-	  controller : "GraphController",
+    controller : "GraphController",
      template: function(tElem, tAttrs){         
-		 return '<div class="{{design}}"><linechart data="eventGraphData" options="graphOptions" mode="{{mode}}"></linechart></div>'; 
+     return '<div class="{{design}}"><linechart data="eventGraphData" options="graphOptions" mode="{{mode}}"></linechart></div>'; 
           },
 
           link : function(scope, element, attrs) {
@@ -75,9 +75,7 @@ angular.module('pulse.directives', []).
               scope.$watch('eventsData', function() {
                 scope.buildEventGraphData(scope.eventsData);      
               });
-          	   	  
           }
-
     }; 
   }])
    .directive('projectRow', [ '$log' , '$filter', function($log, $filter) {
@@ -96,13 +94,13 @@ angular.module('pulse.directives', []).
           scope: {
             of : '@'
           },
-	  replace : true,
+    replace : true,
      template: function(tElem, tAttrs){         
-		 return '<img ng-src="{{ temp | toIconUrl }}" class="icon"/>'; 
+     return '<img ng-src="{{ temp | toIconUrl }}" class="icon"/>'; 
           },
 
-          link : function(scope, element, attrs) {	       	  
-	       	  scope.temp = scope.of;
+          link : function(scope, element, attrs) {            
+            scope.temp = scope.of;
           }
 
     };

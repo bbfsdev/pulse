@@ -68,6 +68,15 @@
     width: 0.6em;
     height: 0.6em;
   }
+
+  /* tool tip layout fix for mobile */
+  .tooltip > .nub {
+    border-color:  #333333 transparent transparent transparent ;
+    top: -10px; }
+  .tooltip.tip-top > .nub {
+    border-color: #333333 transparent transparent transparent;
+    top: auto;
+    bottom: -10px; }
 }
 
 

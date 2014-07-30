@@ -22,7 +22,7 @@ angular.module('pulse.services', [])
 			}, function (error) { $log.log("failed getting available models - error : " + error.status + " " + error.data);});	
 		
 			return deferred.promise;
-		};  
+		};
 		
 		this.getModelContent = function (model) {
 			var service = this;
@@ -43,7 +43,7 @@ angular.module('pulse.services', [])
 							$log.log(model + " failed loading data.  " + JSON.stringify(error));
 						});
 				}
-			 });
+			});
 			 
 			 return deferred.promise;
 		};
@@ -77,8 +77,7 @@ angular.module('pulse.services', [])
 					deferred.resolve(service.projectData);
 			
 				}, function (error) { $log.log("failed getting projects for user " + projectId + " - error : " + error.status + " " + error.data);});	
-		   } 
-		   
+			}
 			return deferred.promise;
 		};
 				
@@ -100,8 +99,8 @@ angular.module('pulse.services', [])
 					deferred.resolve(service.userData);
 			
 				}, function (error) { $log.log("failed getting projects for user " + userId + " - error : " + error.status + " " + error.data);});	
-		    } 
-		   
+			}
+		
 			return deferred.promise;
 		};
 				
@@ -123,9 +122,9 @@ angular.module('pulse.services', [])
 					};
 		
 		this.getIcon = function (from, width, height) {
-			 if (width === undefined && height === undefined) {
-			 	return  this.iconFolder + this.icons[from.toLowerCase()];
-			 }
+			if (width === undefined && height === undefined) {
+				return  this.iconFolder + this.icons[from.toLowerCase()];
+			}
 		}
 		
 }])
