@@ -13,6 +13,7 @@ GEM
     addressable (2.3.6)
     builder (3.2.2)
     daemons (1.1.9)
+<<<<<<< HEAD
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
     eventmachine (1.0.3)
@@ -45,6 +46,14 @@ GEM
       multi_json (~> 1.3)
       multi_xml (~> 0.5)
       rack (~> 1.2)
+=======
+    eventmachine (1.0.3)
+    i18n (0.6.9)
+    json (1.8.1)
+    mime-types (2.3)
+    minitest (5.3.4)
+    oauth (0.4.7)
+>>>>>>> 6e9878869d72ecf053156d0dc6a9a73f309af3fd
     rack (1.5.2)
     rack-protection (1.5.3)
       rack
@@ -68,14 +77,21 @@ GEM
       rack (>= 1.0.0)
     thread_safe (0.3.4)
     tilt (1.4.1)
+<<<<<<< HEAD
     tzinfo (1.2.0)
+=======
+    tzinfo (1.2.1)
+>>>>>>> 6e9878869d72ecf053156d0dc6a9a73f309af3fd
       thread_safe (~> 0.1)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+<<<<<<< HEAD
   github_api
+=======
+>>>>>>> 6e9878869d72ecf053156d0dc6a9a73f309af3fd
   ruby-trello
   rufus-scheduler
   sinatra

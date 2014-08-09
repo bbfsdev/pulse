@@ -1,0 +1,53 @@
+{ 
+"info": 
+{"id" : "1" , "name" : "BBFS", "description": "BBFS is a content backup tool which is used for backing up media file 24/7. This tool indexes and manages hundreds of thousands of files and dozen TB of data with rapid monthly grows. It's purpose is to backup large amounts of importent data with high flow speeds.","lines_of_code" : "43500", "link_to_trello":"http://www.trello.com/bbfs", "languages":[{"name":"ruby", "usage":"100%"}]  , "links_to_github":[{"asdasd":"http://www.github.com/bbfsdev/bbfs"}]}
+,"members": [ 
+		{"info" :
+				{"id": "2", "name": "Genady", "family_name": "Petelko", "trello_username": "genadypetelko", "github_username": "genadyp", "lines_of_code": "87654", "languages":[{"name" : "java", "usage": "34%"}, {"name" : "ruby" , "usage": "66%"}], "number_of_projects": 1, "number_of_events": 1, "link_to_github_page": "https://github.com/bbfsdev", "link_to_trello_page": "https://trello.com/Galo4key" , "activity":"2", "picture" : "gena.png"}
+		},
+		{"info" :
+				{"id": "5", "name": "Kolman", "family_name": "Vornovitsky", "trello_username": "genadypetelko", "github_username": "genadyp", "lines_of_code": "87654", "languages":[{"name" : "java", "usage": "34%"}, {"name" : "ruby" , "usage": "66%"}], "number_of_projects": 1, "number_of_events": 1, "link_to_github_page": "https://github.com/bbfsdev", "link_to_trello_page": "https://trello.com/Galo4key" , "activity":"2", "picture" : "gena.png"}
+		},
+		{"info" :
+				{"id": "12", "name": "Alexey", "family_name": "Nemitov", "trello_username": "genadypetelko", "github_username": "genadyp", "lines_of_code": "87654", "languages":[{"name" : "java", "usage": "34%"}, {"name" : "ruby" , "usage": "66%"}], "number_of_projects": 1, "number_of_events": 1, "link_to_github_page": "https://github.com/bbfsdev", "link_to_trello_page": "https://trello.com/Galo4key" , "activity":"2", "picture" : "gena.png"}
+		},
+		{"info" :
+				{"id": "13", "name": "Yaron", "family_name": "Dror", "trello_username": "genadypetelko", "github_username": "genadyp", "lines_of_code": "87654", "languages":[{"name" : "java", "usage": "34%"}, {"name" : "ruby" , "usage": "66%"}], "number_of_projects": 1, "number_of_events": 1, "link_to_github_page": "https://github.com/bbfsdev", "link_to_trello_page": "https://trello.com/Galo4key" , "activity":"2", "picture" : "gena.png"}
+		},
+		{"info" :
+				{"id": "11", "name": "Yosef", "family_name": "Yudilevich", "trello_username": "genadypetelko", "github_username": "genadyp", "lines_of_code": "87654", "languages":[{"name" : "java", "usage": "34%"}, {"name" : "ruby" , "usage": "66%"}], "number_of_projects": 1, "number_of_events": 1, "link_to_github_page": "https://github.com/bbfsdev", "link_to_trello_page": "https://trello.com/Galo4key" , "activity":"2", "picture" : "gena.png"}
+		}
+],
+"events": [ 
+		{"info": 
+			{"event_name":"bug fixed", "event_description":"fixed a bug that was buggy" ,"link_to_event":"https://github.com/bbfsdev/bbfs/commit/909af100bc941e9e5baf0af4313ea5c2e551c2b4", "date" : "1396756800"}
+		},
+		{"info": 
+			{"event_name":"commented line removed", "event_description":"" ,"link_to_event":"https://github.com/bbfsdev/bbfs/commit/baf2374c515a1dbb765644e35c0d89ef0964b847", "date" : "1396792800"}
+		},
+		{"info": 
+			{"event_name":"new event 2", "event_description":"" ,"link_to_event":"https://github.com/bbfsdev/bbfs/commit/baf2374c515a1dbb765644e35c0d89ef0964b847", "date" : "1396790640"}
+		} ,
+		{"info": 
+			{"event_name":"new event 3", "event_description":"" ,"link_to_event":"https://github.com/bbfsdev/bbfs/commit/baf2374c515a1dbb765644e35c0d89ef0964b847", "date" : "1397538840"}
+		} ,
+		{"info": 
+			{"event_name":"new event 4", "event_description":"" ,"link_to_event":"https://github.com/bbfsdev/bbfs/commit/baf2374c515a1dbb765644e35c0d89ef0964b847", "date" : "1397539200"}
+		} ,
+		{"info": 
+			{"event_name":"new event 5", "event_description":"" ,"link_to_event":"https://github.com/bbfsdev/bbfs/commit/baf2374c515a1dbb765644e35c0d89ef0964b847", "date" : "1397544540"}
+		} ,
+		{"info": 
+			{"event_name":"new event 6", "event_description":"" ,"link_to_event":"https://github.com/bbfsdev/bbfs/commit/baf2374c515a1dbb765644e35c0d89ef0964b847", "date" : "1397872800"}
+		} ,
+		{"info": 
+			{"event_name":"new event 7", "event_description":"" ,"link_to_event":"https://github.com/bbfsdev/bbfs/commit/baf2374c515a1dbb765644e35c0d89ef0964b847", "date" : "1398556800"}
+		} ,
+		{"info": 
+			{"event_name":"new event 7", "event_description":"" ,"link_to_event":"https://github.com/bbfsdev/bbfs/commit/baf2374c515a1dbb765644e35c0d89ef0964b847", "date" : "1405393200"}
+		}   
+] 
+}
+
+
+

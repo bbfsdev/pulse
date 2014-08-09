@@ -1,16 +1,7 @@
-trello: 
-  developer_public_key: f239f9ec77213b9978ee4ac363df473b
-  member_token: abd159f16d4e22f11bf8da0ea6504759bde4cdd76fb82c719ea3b6cbe02699eb
+trello:
+  developer_public_key: ***
+  member_token: ***
   boards:
-    - [pulse, 53324a5fc49c23676256ba85]
-    - [groupcam, 52fcf7b765a307871298187b]
-    - [bbfs, 52aa10f8211067ad12006ebe]
-    - [webrtc-galaxy, 533e7de69d8176b6189f4b9f]
-github:
-  token: 959985f41dcea90779be678c1bbe08a4a9cc3f57
-  user: bbfsdev
-  repos:
-    - [pulse, pulse]
-    - [bbfs, bbfs]
-    - [webrtc-galaxy, webrtc-galaxy-ui]
-    - [webrtc-galaxy, webrtc-galaxy-lib]
+    pulse: ***
+    groupcam: ***
+    bbfs: ***

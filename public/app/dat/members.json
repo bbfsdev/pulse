@@ -1,0 +1,119 @@
+[ 
+{ 
+"info": 
+{"id": "1", "name": "Galina", "family_name": "Yelsky", "trello_username": "galo4kay", "github_username": "Galo4kayGit", "lines_of_code": "0", "number_of_projects": "0", "number_of_events": 0, "link_to_github_page": "https://github.com/bbfsdev", "link_to_trello_page": "https://trello.com/galo4key", "activity":"4" },
+"projects": [ ], 
+"events": [  ] 
+}, 
+
+{ 
+"info": 
+{"id": "2", "name": "Genady", "family_name": "Petelko", "trello_username": "genadypetelko", "github_username": "genadyp", "lines_of_code": "87654", "languages":[{"name" : "java", "usage": "34%"}, {"name" : "ruby" , "usage": "66%"}, {"name" : "c++", "usage": "34%"}, {"name" : "xml" , "usage": "66%"}, {"name" : "python", "usage": "34%"}, {"name" : "css" , "usage": "66%"}], "number_of_projects": 1, "number_of_events": 1, "link_to_github_page": "https://github.com/bbfsdev", "link_to_trello_page": "https://trello.com/Galo4key" , "activity":"2"},
+"projects": [ 
+		{"info": 
+				{"id" : "1" , "name" : "BBFS", "lines_of_code" : "43500", "link_to_trello":"http://www.trello.com/bbfs", "languages":[{"name" : "java", "usage": "34%"}, {"name" : "ruby" , "usage": "66%"}, {"name" : "c++", "usage": "34%"}, {"name" : "xml" , "usage": "66%"}, {"name" : "python", "usage": "34%"}, {"name" : "css" , "usage": "66%"}]  , "links_to_github":["http://www.github.com/bbfsdev/bbfs"]}
+		}
+],
+"events": [ 
+		{"info": 
+			{"event_name":"bug fixed", "event_description":"fixed a bug that was buggy" ,"link_to_event":"https://github.com/bbfsdev/bbfs/commit/909af100bc941e9e5baf0af4313ea5c2e551c2b4", "date" : "1396790640"}
+		},
+		{"info": 
+			{"event_name":"commented line removed", "event_description":"" ,"link_to_event":"https://github.com/bbfsdev/bbfs/commit/baf2374c515a1dbb765644e35c0d89ef0964b847", "date" : "1405393200"}
+		} 
+] 
+},
+
+{
+"info": 
+{"id": "3", "name": "Igorr", "family_name": "Friend", "trello_username": "genadypetelko", "github_username": "genadyp", "lines_of_code": "87654", "languages":[{"name" : "java", "usage": "34%"}, {"name" : "ruby" , "usage": "66%"}], "number_of_projects": 1, "number_of_events": 1, "link_to_github_page": "https://github.com/genadyp", "link_to_trello_page": "https://trello.com/genadypetelko" ,"activity":"4"},
+"projects": [ {"info": {"id" : "1" , "name" : "BBFS", "lines_of_code" : "43500", "link_to_trello":"http://www.trello.com/bbfs", "languages":[{"ruby":"100%"}] , "links_to_github":["http://www.github.com/bbfsdev/bbfs"]}}],
+"events": [ {"info": 
+			{"event_name":"commented line removed", "event_description":"" ,"link_to_event":"https://github.com/bbfsdev/bbfs/commit/baf2374c515a1dbb765644e35c0d89ef0964b847", "date" : "1396790640"}
+		}  ] 
+
+},
+{
+"info": 
+{"id": "4", "name": "Kiril", "family_name": "Rogachevsky", "trello_username": "kirillr", "github_username": "kirillr", "lines_of_code": "87654", "languages":[{"name" : "java", "usage": "34%"}, {"name" : "ruby" , "usage": "66%"}], "number_of_projects": 1, "number_of_events": 1, "link_to_github_page": "https://github.com/kirillr", "link_to_trello_page": "https://trello.com/kirillr" , "activity":"3"},
+"projects": [ {"info": {"id" : "1" , "name" : "BBFS", "lines_of_code" : "43500", "link_to_trello":"http://www.trello.com/bbfs", "languages":[{"ruby":"100%"}] , "links_to_github":["http://www.github.com/bbfsdev/bbfs"]}}],
+"events": [ {"info": 
+			{"event_name":"commented line removed", "event_description":"" ,"link_to_event":"https://github.com/bbfsdev/bbfs/commit/baf2374c515a1dbb765644e35c0d89ef0964b847", "date" : "1396790640"}
+		}  ] 
+},
+{
+"info": 
+{"id": "5", "name": "Kolman", "family_name": "Vornovitsky", "trello_username": "kolmanvornovitsky", "github_username": "kolmanv", "lines_of_code": "87654", "languages":[{"name" : "java", "usage": "34%"}, {"name" : "ruby" , "usage": "66%"}], "number_of_projects": 1, "number_of_events": 1, "link_to_github_page": "https://github.com/bbfsdev", "link_to_trello_page": "https://trello.com/kolmanvornovitsky" , "activity":"6"},
+"projects": [ {"info": {"id" : "1" , "name" : "BBFS", "lines_of_code" : "43500", "link_to_trello":"http://www.trello.com/bbfs", "languages":[{"ruby":"100%"}] , "links_to_github":["http://www.github.com/bbfsdev/bbfs"]}}],
+"events": [  {"info": 
+			{"event_name":"commented line removed", "event_description":"" ,"link_to_event":"https://github.com/bbfsdev/bbfs/commit/baf2374c515a1dbb765644e35c0d89ef0964b847", "date" : "1396790640"}
+		}  ] 
+}
+,
+{
+"info": 
+{"id": "6", "name": "Oleg", "family_name": "Milshtein", "trello_username": "kolmanvornovitsky", "github_username": "kolmanv", "lines_of_code": "87654", "languages":[{"name" : "java", "usage": "34%"}, {"name" : "ruby" , "usage": "66%"}], "number_of_projects": 1, "number_of_events": 1, "link_to_github_page": "https://github.com/bbfsdev", "link_to_trello_page": "https://trello.com/kolmanvornovitsky" , "activity":"2"},
+"projects": [ {"info": {"id" : "1" , "name" : "BBFS", "lines_of_code" : "43500", "link_to_trello":"http://www.trello.com/bbfs", "languages":[{"ruby":"100%"}] , "links_to_github":["http://www.github.com/bbfsdev/bbfs"]}}],
+"events": [ {"info": 
+			{"event_name":"bug fixed", "event_description":"fixed a bug that was buggy" ,"link_to_event":"https://github.com/bbfsdev/bbfs/commit/909af100bc941e9e5baf0af4313ea5c2e551c2b4", "date" : "1396790640"}
+		} ]
+},
+{
+"info": 
+{"id": "7", "name": "Vladimir", "family_name": "Shiray", "trello_username": "kolmanvornovitsky", "github_username": "kolmanv", "lines_of_code": "87654", "languages":[{"name" : "java", "usage": "34%"}, {"name" : "ruby" , "usage": "66%"}], "number_of_projects": 1, "number_of_events": 1, "link_to_github_page": "https://github.com/bbfsdev", "link_to_trello_page": "https://trello.com/kolmanvornovitsky" , "activity":"1"},
+"projects": [ {"info": {"id" : "1" , "name" : "BBFS", "lines_of_code" : "43500", "link_to_trello":"http://www.trello.com/bbfs", "languages":[{"ruby":"100%"}] , "links_to_github":["http://www.github.com/bbfsdev/bbfs"]}}],
+"events": [ {"info": 
+			{"event_name":"bug fixed", "event_description":"fixed a bug that was buggy" ,"link_to_event":"https://github.com/bbfsdev/bbfs/commit/909af100bc941e9e5baf0af4313ea5c2e551c2b4", "date" : "1396790640"}
+		} ]
+},
+{
+"info": 
+{"id": "8", "name": "Yaniv", "family_name": "Elimor", "trello_username": "kolmanvornovitsky", "github_username": "kolmanv", "lines_of_code": "87654", "languages":[{"name" : "java", "usage": "34%"}, {"name" : "ruby" , "usage": "66%"}], "number_of_projects": 1, "number_of_events": 1, "link_to_github_page": "https://github.com/bbfsdev", "link_to_trello_page": "https://trello.com/kolmanvornovitsky" , "activity":"7"},
+"projects": [ {"info": {"id" : "1" , "name" : "BBFS", "lines_of_code" : "43500", "link_to_trello":"http://www.trello.com/bbfs", "languages":[{"ruby":"100%"}] , "links_to_github":["http://www.github.com/bbfsdev/bbfs"]}}],
+"events": [ {"info": 
+			{"event_name":"bug fixed", "event_description":"fixed a bug that was buggy" ,"link_to_event":"https://github.com/bbfsdev/bbfs/commit/909af100bc941e9e5baf0af4313ea5c2e551c2b4", "date" : "1396790640"}
+		} ]
+},
+{
+"info": 
+{"id": "9", "name": "andrei", "family_name": "vajenin", "trello_username": "kolmanvornovitsky", "github_username": "kolmanv", "lines_of_code": "87654", "languages":[{"name" : "java", "usage": "34%"}, {"name" : "ruby" , "usage": "66%"}], "number_of_projects": 1, "number_of_events": 1, "link_to_github_page": "https://github.com/bbfsdev", "link_to_trello_page": "https://trello.com/kolmanvornovitsky" , "activity":"-5"},
+"projects": [ {"info": {"id" : "1" , "name" : "BBFS", "lines_of_code" : "43500", "link_to_trello":"http://www.trello.com/bbfs", "languages":[{"ruby":"100%"}] , "links_to_github":["http://www.github.com/bbfsdev/bbfs"]}}],
+"events": [ {"info": 
+			{"event_name":"bug fixed", "event_description":"fixed a bug that was buggy" ,"link_to_event":"https://github.com/bbfsdev/bbfs/commit/909af100bc941e9e5baf0af4313ea5c2e551c2b4", "date" : "1396790640"}
+		} ]
+},
+{
+"info": 
+{"id": "10", "name": "Konstantin", "family_name": "Aleksandrov", "trello_username": "kolmanvornovitsky", "github_username": "kolmanv", "lines_of_code": "87654", "languages":[{"name" : "java", "usage": "34%"}, {"name" : "ruby" , "usage": "66%"}], "number_of_projects": 1, "number_of_events": 1, "link_to_github_page": "https://github.com/bbfsdev", "link_to_trello_page": "https://trello.com/kolmanvornovitsky" , "activity":"1"},
+"projects": [ {"info": {"id" : "1" , "name" : "BBFS", "lines_of_code" : "43500", "link_to_trello":"http://www.trello.com/bbfs", "languages":[{"ruby":"100%"}] , "links_to_github":["http://www.github.com/bbfsdev/bbfs"]}}],
+"events": [ {"info": 
+			{"event_name":"bug fixed", "event_description":"fixed a bug that was buggy" ,"link_to_event":"https://github.com/bbfsdev/bbfs/commit/909af100bc941e9e5baf0af4313ea5c2e551c2b4", "date" : "1396790640"}
+		} ]
+},
+{
+"info": 
+{"id": "11", "name": "Yosef", "family_name": "Yudilevich", "trello_username": "kolmanvornovitsky", "github_username": "kolmanv", "lines_of_code": "87654", "languages":[{"name" : "java", "usage": "34%"}, {"name" : "ruby" , "usage": "66%"}], "number_of_projects": 1, "number_of_events": 1, "link_to_github_page": "https://github.com/bbfsdev", "link_to_trello_page": "https://trello.com/kolmanvornovitsky" , "activity":"3"},
+"projects": [ {"info": {"id" : "1" , "name" : "BBFS", "lines_of_code" : "43500", "link_to_trello":"http://www.trello.com/bbfs", "languages":[{"ruby":"100%"}] , "links_to_github":["http://www.github.com/bbfsdev/bbfs"]}}],
+"events": [ {"info": 
+			{"event_name":"bug fixed", "event_description":"fixed a bug that was buggy" ,"link_to_event":"https://github.com/bbfsdev/bbfs/commit/909af100bc941e9e5baf0af4313ea5c2e551c2b4", "date" : "1396790640"}
+		} ]
+},
+
+{
+"info": 
+{"id": "12", "name": "Alexey", "family_name": "Nemitov", "trello_username": "kolmanvornovitsky", "github_username": "kolmanv", "lines_of_code": "87654", "languages":[{"name" : "java", "usage": "34%"}, {"name" : "ruby" , "usage": "66%"}], "number_of_projects": 1, "number_of_events": 1, "link_to_github_page": "https://github.com/bbfsdev", "link_to_trello_page": "https://trello.com/kolmanvornovitsky" , "activity":"6"},
+"projects": [ {"info": {"id" : "1" , "name" : "BBFS", "lines_of_code" : "43500", "link_to_trello":"http://www.trello.com/bbfs", "languages":[{"ruby":"100%"}] , "links_to_github":["http://www.github.com/bbfsdev/bbfs"]}}],
+"events": [ {"info": 
+			{"event_name":"bug fixed", "event_description":"fixed a bug that was buggy" ,"link_to_event":"https://github.com/bbfsdev/bbfs/commit/909af100bc941e9e5baf0af4313ea5c2e551c2b4", "date" : "1396790640"}
+		} ]
+},
+{
+"info": 
+{"id": "13", "name": "Yaron", "family_name": "Dror", "trello_username": "kolmanvornovitsky", "github_username": "kolmanv", "lines_of_code": "87654", "languages":[{"name" : "java", "usage": "34%"}, {"name" : "ruby" , "usage": "66%"}], "number_of_projects": 1, "number_of_events": 1, "link_to_github_page": "https://github.com/bbfsdev", "link_to_trello_page": "https://trello.com/kolmanvornovitsky" , "activity":"-1"},
+"projects": [ {"info": {"id" : "1" , "name" : "BBFS", "lines_of_code" : "43500", "link_to_trello":"http://www.trello.com/bbfs", "languages":[{"ruby":"100%"}] , "links_to_github":["http://www.github.com/bbfsdev/bbfs"]}}],
+"events": [ {"info": 
+			{"event_name":"bug fixed", "event_description":"fixed a bug that was buggy" ,"link_to_event":"https://github.com/bbfsdev/bbfs/commit/909af100bc941e9e5baf0af4313ea5c2e551c2b4", "date" : "1396790640"}
+		} ]
+}
+]
+

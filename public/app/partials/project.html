@@ -1,0 +1,119 @@
+<!-- Tables -->
+
+<div ng-controller="ProjectController">
+
+	  <div class="row wide">
+	  
+		  <div class="small-12 medium-6 columns">
+	  		    <div class="row collapse">
+	        	    <div class="left"><h2>{{projectData.info.name}}</h2></div>
+	        	    <div class="right"><a class="show-for-medium-up large button round" href="#/">Back to Main</a></div>
+	        		<div class="clearfix"></div>
+	        	</div>
+	        	<div class="row collapse">
+					<h3>What is <b>{{projectData.info.name}}</b> ?</h3>
+				</div>
+				<div class="row collapse">
+					<p>{{projectData.info.description}}</p>								
+				</div>
+				<div class="row collapse">
+					
+					<div class="small-12 medium-8 columns">
+						<div class="row">
+							<div class="panel radius">
+								<b>Lines of code:</b> <span class="right">{{projectData.info.lines_of_code}}</span>		        			
+							</div>
+						</div>
+						<div class="row">
+							<div class="panel radius" >
+								<b>Trello:</b> <a class="right" href="{{projectData.info.link_to_trello}}">{{projectData.info.link_to_trello}}</a>		        			
+    						</div>
+    					</div>
+    					<div class="row">
+    						<div class="panel radius">
+								<b>Github:</b>
+								<div class="right" ng-repeat="github in projectData.info.links_to_github">
+									<div ng-repeat="(key, link) in github">
+										<a  href="{{link}}">{{key}}</a>
+									</div>
+								</div>			        			
+	    					</div>
+	    				</div>
+   					
+    				</div>
+    				<div class="small-12 medium-4 columns">
+    					
+    					<div class="row collapse">
+    					
+    						<div class="small-6 medium-6 columns">
+
+								<table class="panel radius">
+									<tr>
+										<th>Language</th>
+										<th>Usage</th>		        									
+									</tr>
+									<tr ng-repeat="language in projectData.info.languages"> 
+										<td>{{language.name}}</td><td>{{language.usage}}</td>
+									</tr>
+								</table>
+							</div>
+							<div class="small-6 medium-6 columns">				
+    						</div>
+						</div>
+					</div>
+								
+		        </div>
+				<hr/>
+					<div class="row collapse">
+						<h3>Members</h3>
+						<div class="space-bottom" ng-repeat="member in projectData.members">
+							<div class="row collapse panel radius" >
+								<div class="small-2 medium-1 columns">
+					    			<img class="panel callout radius small-profile-pic" src="dat/gena.png"/>
+					    		</div>
+					    		<div class="small-7 medium-3 columns">
+						    		<div class="row collapse" >
+					    				<a href="#user/{{data.info.id}}">{{member.info.name}}</a>
+					    			</div>
+					    			<div class="row collapse">
+					    				<a href="#user/{{data.info.id}}">{{member.info.family_name}}</a>
+					    			</div>
+						    	</div>
+						    	<div class="small-1 medium-6 columns">
+						    		<div class="hide-for-small">
+							    		<div class="row collapse">
+							    			<div ng-if="member.info.languages.length < 6">
+									    		<div class="small-{{(12-(member.info.languages.length*2))}} medium-{{(12-(member.info.languages.length*2))}} columns">
+									    		&nbsp;</div>
+									    	</div>
+							    			<div ng-repeat="language in member.info.languages | limitTo : 6" class="small-2 medium-2 columns">
+									    		 <span class="has-tip" tooltip="{{language.name}}" tooltip-append-to-body="true" tooltip-placement="top"><small>{{language.usage}}</small><icon of="{{language.name}}" /></span>
+									    	</div>
+							    		</div>
+							    	</div>
+						    	</div>
+						    		    	
+						    	<div class="small-2 medium-2 columns">
+						    		<event-graph events-data="member.events" series-type="line" class="right" mode="thumbnail" design="member-graph-tiny"></event-graph>
+						    	</div>
+
+						    </div>
+					    </div>
+						
+					</div>
+					
+			<hr class="show-for-small-only"/>   
+		  </div>
+		  <div class="small-12 medium-6 columns">
+	          <h2>{{projectData.info.name}}<small>'s events</small></h2>
+	          	<event-graph events-data="projectData.events" series-type="area" design="project-graph-detailed panel callout radius"></event-graph>
+	          	
+				<div ng-repeat="event in projectData.events" class="panel radius">
+						<a href="{{event.info.link_to_event}}">{{event.info.event_name}}</a> {{event.info.event_description}} - {{event.info.date | coolDate}}					
+				</div>	
+		  </div>
+        
+		  
+	  </div>
+</div>
+
