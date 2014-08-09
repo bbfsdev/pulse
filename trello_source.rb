@@ -11,6 +11,18 @@ class TrelloSource
     @boards = conf['boards']
   end
 
+  def events
+    []
+  end
+
+  def projects
+    []
+  end
+
+  def members
+    []
+  end
+
   def boards
     @boards.keys
   end
@@ -23,7 +35,7 @@ class TrelloSource
     status
   end
 
-  def boards_status()
+  def boards_status
     status = {}
     @boards.each do |name, id|
       status[name] = status_list(name)
@@ -31,7 +43,7 @@ class TrelloSource
     status
   end
 
-  def members(board_name)
+  def trello_members(board_name)
     Board.find(@boards[board_name]).members(params={limit: 1000})
   end
 
