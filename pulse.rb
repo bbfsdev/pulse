@@ -27,12 +27,12 @@ class Pulse < Sinatra::Base
   end
 
   get '/members' do
-    @source.members.to_json({max_nesting: 4})
+    @source.members.to_json({max_nesting: 5})
   end
 
   get '/members/:id' do |id|
     if @source.members.key? id 
-      {id => @source.members[id]}.to_json({max_nesting: 4})
+      {id => @source.members[id]}.to_json({max_nesting: 5})
     else
       '{}'
     end

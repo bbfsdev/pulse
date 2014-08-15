@@ -34,9 +34,9 @@ class Source
   def projects()
     puts 'Getting projects'
     trello_projects = @trello_source.projects()
-    puts trello_projects
+    $logger.debug trello_projects
     github_projects = @github_source.projects()
-    puts github_projects
+    $logger.debug github_projects
     merge(github_projects, trello_projects)
   end
 

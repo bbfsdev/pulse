@@ -19,10 +19,10 @@ class GithubSource
       $logger.debug @github[user]['connection']
     end
 
-    scheduler.every '10m', :first_at => :now do |job|
+    scheduler.every '1m', :first_at => :now do |job|
       $logger.info "Loading..."
       @github_data = load
-    end
+    end if scheduler
 
     @projects = {}
     @members = {}
@@ -50,12 +50,6 @@ class GithubSource
         repo_info = github.repos.get(user, repo_name)
 
         project = SourceProject.new(proj_name)
-        if @projects.has_key?(project.info['id'])
-          @projects[project.info['id']].merge_with(project)
-        else
-          @projects[project.info['id']] = project
-        end
-        project = @projects[project.info['id']]
         if !project.info.key? 'github_projects'
           project.info['github_projects'] = []
         end
@@ -66,8 +60,15 @@ class GithubSource
          ["url", "html_url"]].each do | info_field, github_field |
           github_project[info_field] = repo_info.body[github_field]
         end
-
         project.info['languages'] = github.repos.languages(user, repo_name).to_hash
+
+        # Reconsiliate project object
+        if @projects.has_key?(project.info['id'])
+          @projects[project.info['id']].merge_with(project)
+        else
+          @projects[project.info['id']] = project
+        end
+        project = @projects[project.info['id']]
 
         contributors = github.repos.contributors(user, repo_name)
         contributors.each do |contributor|
@@ -85,6 +86,7 @@ class GithubSource
 
       @members.each do |id, member|
         user_info = github.users.get(id)
+        $logger.debug "user info %s" % user_info
         [["avatar_url", "avatar_url"],
          ["url", "html_url"],
          ["github_public_repos", "public_repos"]].each do | info_field, github_field |

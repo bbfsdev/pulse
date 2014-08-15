@@ -2,6 +2,8 @@ require './log'
 require './source_data'
 require 'json'
 
+$logger.level = Logger::DEBUG
+
 describe SourceProject, "SourceData" do
   it "json with up to depth level 3" do
     project = SourceProject.new("proj_a")
