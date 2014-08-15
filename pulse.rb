@@ -11,24 +11,34 @@ class Pulse < Sinatra::Base
 
   def initialize()
     super
-    @source = Source.new
-    @projects = ''
-    @members = ''
-
-    SCHEDULER.every '10s', :first_in => 0 do |job|
-      @projects = @source.projects.to_json
-    end
-    SCHEDULER.every '10s', :first_in => 0 do |job|
-      @members = @source.members.to_json
-    end
-
+    @source = Source.new(SCHEDULER)
   end
 
   get '/projects' do
-    @projects
+    @source.projects.to_json({max_nesting: 5})
+  end
+
+  get '/projects/:id' do |id|
+    if @source.projects.key? id 
+      {id => @source.projects[id]}.to_json({max_nesting: 5})
+    else
+      '{}'
+    end
   end
 
   get '/members' do
-    @members
+    @source.members.to_json({max_nesting: 5})
+  end
+
+  get '/members/:id' do |id|
+    if @source.members.key? id 
+      {id => @source.members[id]}.to_json({max_nesting: 5})
+    else
+      '{}'
+    end
+  end
+
+  get '/events' do
+    @source.events.to_json({max_nesting: 4})
   end
 end
