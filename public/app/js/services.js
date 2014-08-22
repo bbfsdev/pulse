@@ -34,14 +34,14 @@ angular.module('pulse.services', [])
 					deferred.resolve(service.modelCache[model]);
 				} else {
 					$log.log("loading data from : /" + model);
-					$http({method: 'GET', url: UrlService.url('/' + model + '.json', 'dat/' + model + '.json')} )
+					$http({method: 'GET', url: UrlService.url('/' + model, 'dat/' + model + '.json', "liveUrl")} )
 						.then(function (result){
 							$log.log(model + " data recieved from server : " + result.data);
 							service.modelCache[model] = result.data;
 							deferred.resolve(result.data);									
 						}, function error(error) { 
 							$log.log(model + " failed loading data.  " + JSON.stringify(error));
-						});
+					});
 				}
 			});
 			 
@@ -70,10 +70,19 @@ angular.module('pulse.services', [])
 			if ("info" in service.projectData) {
 				deferred.resolve(service.projectData);
 			} else {
-				$http({method: 'GET', url:UrlService.url('/project/'+projectId, 'dat/project_bbfs.json')}).then(function(result) {
-					service.projectData['info'] = result.data.info;
-					service.projectData['members'] = result.data.members;
-					service.projectData['events'] = result.data.events;
+				$http({method: 'GET', url:UrlService.url('/projects/'+projectId, 'dat/project_bbfs.json', "liveUrl")}).then(function(result) {
+
+					var object = {};
+	            	for (var key in result.data) {
+	                	if (result.data.hasOwnProperty(key)) {
+	                		object = result.data[key];
+	                		break;
+	                	}
+	              	}
+
+					service.projectData['info'] = object.info;
+					service.projectData['members'] = object.members;
+					service.projectData['events'] = object.events;
 					deferred.resolve(service.projectData);
 			
 				}, function (error) { $log.log("failed getting projects for user " + projectId + " - error : " + error.status + " " + error.data);});	
@@ -92,10 +101,21 @@ angular.module('pulse.services', [])
 			if ("info" in service.userData) {
 				deferred.resolve(service.userData);
 			} else {
-				$http({method: 'GET', url:UrlService.url('/user/'+userId, 'dat/1.json')}).then(function(result) { 
-					service.userData['info'] = result.data.info;
-					service.userData['projects'] = result.data.projects;
-					service.userData['events'] = result.data.events;
+				$http({method: 'GET', url:UrlService.url('/members/'+userId, 'dat/1.json', "liveUrl")}).then(function(result) {
+					var object = {};
+	            	for (var key in result.data) {
+	                	if (result.data.hasOwnProperty(key)) {
+	                		object = result.data[key];
+	                		break;
+	                	}
+	              	}
+
+					service.userData['info'] = object.info;
+					service.userData['projects'] = object.projects;
+					service.userData['events'] = object.events;
+
+					$log.log(JSON.stringify(service.userData));
+
 					deferred.resolve(service.userData);
 			
 				}, function (error) { $log.log("failed getting projects for user " + userId + " - error : " + error.status + " " + error.data);});	
@@ -130,7 +150,14 @@ angular.module('pulse.services', [])
 }])
 .service('UrlService', ['useMock', function(useMock) {
 
-	this.url = function (liveUrl, mockUrl) {
+	this.url = function (liveUrl, mockUrl, override) {
+		if (override !== undefined) {
+			if (override == "liveUrl") 
+				return liveUrl;
+			else
+				return mockUrl;
+		}
+
 		if (useMock == true) {
 			return mockUrl;
 		} else {

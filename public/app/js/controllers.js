@@ -53,7 +53,7 @@ angular.module('pulse.controllers', [])
 	 	$scope.userData = {};
 	 	
 		UserService.getUserData($routeParams.user).then(function (data) {
-			$scope.userData = data;	 
+			$scope.userData = data;	
 		});
 
   }]).controller('ProjectController', ['$scope', '$routeParams', 'ProjectService' ,'$log', '_' ,

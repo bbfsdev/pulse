@@ -37,8 +37,16 @@ angular.module('pulse.directives', []).
           link : function(scope, element, attrs) {
               scope.getContent(scope.model).then(function (data) {
               scope.pagInfo = scope.getPaginationObj(scope.model);
-              scope.originalItems = data;
-              scope.items = data; 
+
+              // objects are save as key: {info...}
+              var objects = [];
+              for (var key in data) {
+                if (data.hasOwnProperty(key)) {
+                  objects.push(data[key]);
+                }
+              }
+              scope.originalItems = objects;
+              scope.items = objects; 
           });
             
             scope.updatePagInfo = function(searchQuery) {
