@@ -4,7 +4,7 @@ class SourceData
   attr_accessor :info
 
   def initialize(id)
-    @info = { 'id' => id }
+    @info = {'id' => id}
   end
 
   def merge_with(other)
