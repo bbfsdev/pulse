@@ -60,7 +60,11 @@ class GithubSource
          ["url", "html_url"]].each do | info_field, github_field |
           github_project[info_field] = repo_info.body[github_field]
         end
-        project.info['languages'] = github.repos.languages(user, repo_name).to_hash
+        languages = []
+        github.repos.languages(user, repo_name).each { |lang, chars|
+          languages.append({'name' => lang, 'usage' => chars})
+        }
+        project.info['languages'] = languages
 
         # Reconsiliate project object
         if @projects.has_key?(project.info['id'])
@@ -89,7 +93,8 @@ class GithubSource
         $logger.debug "user info %s" % user_info
         [["avatar_url", "avatar_url"],
          ["url", "html_url"],
-         ["github_public_repos", "public_repos"]].each do | info_field, github_field |
+         ["github_public_repos", "public_repos"],
+         ["name", "name"]].each do | info_field, github_field |
           member.info[info_field] = user_info.body[github_field]
         end
       end
