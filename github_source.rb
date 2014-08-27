@@ -75,16 +75,18 @@ class GithubSource
         project = @projects[project.info['id']]
 
         contributors = github.repos.contributors(user, repo_name)
+        project.members = []
         contributors.each do |contributor|
           $logger.debug "%s contributor for project %s" % [contributor.login, proj_name]
           member = SourceMember.new(contributor.login)
-          member.projects[project.info['id']] = project
+          member.projects = []
+          member.projects.append(project)
           if @members.has_key?(member.info['id'])
             @members[member.info['id']].merge_with(member)
           else
             @members[member.info['id']] = member
           end
-          project.members[member.info['id']] = @members[member.info['id']]
+          project.members.append(@members[member.info['id']])
         end
       end 
 

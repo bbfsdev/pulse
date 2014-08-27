@@ -8,12 +8,12 @@
 		  		    <div class="row collapse">
 		  		    	<div class="small-3 medium-2 large-1 columns">
 		        			<div class="row">
-		        				<img class="panel callout radius profile-pic" ng-src="{{userData.info.avatar_url}}"/>
+		        				<img class="panel callout radius profile-pic" ng-src="{{userData.info.avatar_url | ifUndefinedUseDefaults:'avatar'}}"/>
 		        			</div>
 		        		</div>
 		        		<div class="small-9 medium-5 large-6 columns" >
 		        			<div class="row">
-		        				<p style=" margin-bottom: 0.55rem;"><h2>{{userData.info.name}} {{userData.info.family_name}}</h2></p>
+		        				<p style=" margin-bottom: 0.55rem;"><h2>{{userData.info.name | ifUndefinedUse:userData.info.id}}</h2></p>
 		        			</div>
 		        	    </div>
 		        	    <div class="small-12 medium-5 columns">
@@ -32,17 +32,22 @@
         					</div>
         					<div class="row">
         						<div class="panel radius">
-									<b>Github user:</b> <a class="right" href="{{userData.info.link_to_github_page}}">{{userData.info.github_username}}</a>		        			
+									<b>Github user:</b> <a class="right" href="{{userData.info.url}}">{{userData.info.id}}</a>		        			
         						</div>
         					</div>
         					<div class="row">
         						<div class="panel radius">
-								   <b>Number of projects:</b> <span class="right">{{userData.info.number_of_projects}}</span>				
+								   <b>Number of projects:</b> <span class="right">{{userData.info.projects_count}}</span>				
+								</div>
+							</div>
+							<div class="row">
+        						<div class="panel radius">
+								   <b>Number of github repositories:</b> <span class="right">{{userData.info.github_public_repos}}</span>				
 								</div>
 							</div>
 							<div class="row">
 								<div class="panel radius">
-									<b>Lines of code:</b> <span class="right">{{userData.info.lines_of_code}}</span>		        		
+									<b>Code size:</b> <span class="right">{{userData.info.code_size}}</span>		        		
         						</div>
         					</div>
         				</div>
@@ -57,7 +62,7 @@
 											<th>Language</th>
 											<th>Usage</th>		        									
     									</tr>
-										<tr ng-repeat="language in userData.info.languages"> 
+										<tr ng-repeat="language in userData.info.languagesPercentage"> 
 											<td>{{language.name}}</td><td>{{language.usage}}</td>
 										</tr>
 									</table>
@@ -71,14 +76,14 @@
 		        <hr/>
 		        
 		  		<div class="row  collapse">
-	        	    <div class="left"><h2>{{userData.info.name}} {{userData.info.family_name}}<small>'s projects</small></h2></div>
+	        	    <div class="left"><h2>{{userData.info.name | ifUndefinedUse:userData.info.id}}<small>'s projects</small></h2></div>
 	        		<div  class="clearfix"></div>	        			  					
 	  				<project-row project="project" ng-repeat="project in userData.projects" class="row collapse"></project-row>
 		        </div>
 		    <hr class="show-for-small-only"/> 
 		  </div>
 		  <div class="small-12 medium-6 columns">
-	          <h2>{{userData.info.name}} {{userData.info.family_name}}<small>'s events</small></h2>	
+	          <h2>{{userData.info.name | ifUndefinedUse:userData.info.id}}<small>'s events</small></h2>	
 				 <div ng-repeat="event in userData.events" class="panel radius">
 				     <a href="{{event.info.link_to_event}}">{{event.info.event_name}}</a> {{event.info.event_description}} - {{event.info.date}}					
 				 </div>	

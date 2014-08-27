@@ -5,26 +5,23 @@
     <searchable-content design="panel clearfix" title="Members (Activity)" model="members" paginate="true">
     	<div class="row collapse">
     		<div class="small-2 medium-1 columns">
-    			<img class="panel callout radius small-profile-pic" ng-src="{{data.info.avatar_url}}"/>
+    			<img class="panel callout radius small-profile-pic" ng-src="{{data.info.avatar_url | ifUndefinedUseDefaults:'avatar'}}"/>
     		</div>
     		<div class="small-7 medium-3 columns" style="vertical-align: center;">
     			<div class="row collapse" >
-    				<a href="#user/{{data.info.id}}">{{data.info.name}}</a>
-    			</div>
-    			<div class="row collapse">
-    				<a href="#user/{{data.info.id}}">{{data.info.family_name}}</a>
+    				<a href="#members/{{data.info.id}}">{{data.info.name | ifUndefinedUse:data.info.id}}</a>
     			</div>
 	    		 
 	    	</div>
 	    	<div class="small-1 medium-6 columns">
 	    		<div class="hide-for-small">
 		    		<div class="row collapse">
-		    			<div ng-if="data.info.languages.length < 6">
-				    		<div class="small-{{(12-(data.info.languages.length*2))}} medium-{{(12-(data.info.languages.length*2))}} columns">
+		    			<div ng-if="data.info.languagesPercentage.length < 6">
+				    		<div class="small-{{(12-(data.info.languagesPercentage.length*2))}} medium-{{(12-(data.info.languagesPercentage.length*2))}} columns">
 				    		&nbsp;</div>
 				    	</div>
-		    			<div ng-repeat="language in data.info.languages | limitTo : 6" class="small-2 medium-2 columns">
-				    		 <span class="has-tip" tooltip="{{language.name}}" tooltip-append-to-body="true" tooltip-placement="top"><small>{{language.usage}}</small><icon of="{{language.name}}" /></span>
+		    			<div ng-repeat="language in data.info.languagesPercentage | limitTo : 6" class="small-2 medium-2 columns">
+				    		 <span class="has-tip" tooltip="{{language.name}}" tooltip-append-to-body="true" tooltip-placement="top"><small>{{language.usage}}</small><icon of="{{language.name}}" ></icon></span>
 				    	</div>
 		    		</div>
 		    	</div>
@@ -41,7 +38,7 @@
     <hr class="show-for-small-only"/>         
   </div>
   <div class="small-12 medium-6 columns">
-    <searchable-content design=" clearfix" title="Projects" model="projects" paginate="true">
+    <searchable-content design=" clearfix" title="Project" model="projects" paginate="true">
 		<project-row project="data" class="row collapse"></project-row>	
     </searchable-content>        
   </div>

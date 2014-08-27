@@ -10,7 +10,7 @@ angular.module('pulse.controllers', [])
 
   }])
   .controller('ContentController', ['$scope', 'ContentService' , '_', '$log' ,function($scope, ContentService, _, $log) {
-	$scope.models = {};
+   $scope.models = {};
    $scope.paginationInfo = {};	
    $scope.itemsPerPage = {};
    $scope.itemsPerPage['projects'] = 6;
@@ -53,7 +53,7 @@ angular.module('pulse.controllers', [])
 	 	$scope.userData = {};
 	 	
 		UserService.getUserData($routeParams.user).then(function (data) {
-			$scope.userData = data;	
+			$scope.userData = data;
 		});
 
   }]).controller('ProjectController', ['$scope', '$routeParams', 'ProjectService' ,'$log', '_' ,
@@ -62,7 +62,7 @@ angular.module('pulse.controllers', [])
 	 	$scope.projectData = [];
 		
 		ProjectService.getProjectData($routeParams.project).then(function (data) {
-			 $scope.projectData = data;
+			$scope.projectData = data;
 		});
 		
   }]).controller('GraphController', ['$scope', '$routeParams', '$q', 'ProjectService' ,'$log', '_' ,

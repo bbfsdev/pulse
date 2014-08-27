@@ -47,4 +47,30 @@ angular.module('pulse.filters', []).
       
       return IconService.getIcon(input);
        };
+  }])
+  .filter('capitalize' , [ function() {
+      return function(input) {
+        if (input == undefined)
+          return input;     
+        
+        return input.charAt(0).toUpperCase() + input.substring(1);
+      }
+
+  }])
+  .filter('ifUndefinedUse' , [ function() {
+      return function(input, useMe) {
+        if (input == undefined)
+          return useMe;     
+        else 
+          return input
+      }
+
+  }])
+  .filter('ifUndefinedUseDefaults', [ 'DEFAULTS',function (DEFAULTS) {
+      return function(input, key) {
+        if (input == undefined)
+          return DEFAULTS[key];     
+        else 
+          return input
+      }
   }]);
