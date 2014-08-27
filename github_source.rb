@@ -75,6 +75,7 @@ class GithubSource
         project = @projects[project.info['id']]
 
         contributors = github.repos.contributors(user, repo_name)
+        $logger.debug "user: %s repo_name: %s" % [user, repo_name]
         contributors.each do |contributor|
           $logger.debug "%s contributor for project %s" % [contributor.login, proj_name]
           member = SourceMember.new(contributor.login)
